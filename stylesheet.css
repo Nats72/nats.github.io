@@ -251,7 +251,8 @@ body{
     grid-column: 3/-1;
     grid-row: 2/4;
     margin-right: 50px;
-    overflow: auto;
+    overflow: auto;    /* 横スクロール実装 */
+    white-space: nowrap;    /* 横スクロール実装 */
 }
 .activities_frame{
     display: inline-block;
@@ -263,6 +264,9 @@ body{
 .activities_date{
     color: gray;
 }
+
+
+
 /* ふわっと表示させるアニメーション */
 .fuwari_animation{
     opacity: 0;
