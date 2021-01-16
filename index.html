@@ -4,243 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat');
-        
-        body{
-            position: relative;
-            cursor: none;    /* もともとあるカーソルは見えなくなるようにする */
-            margin: 0;
-        }
-        .cursor{
-            width: 1rem;
-            height: 1rem;
-            border-radius: 50%;
-            position: absolute;
-            transform: translate(-50%,-50%);    /* 上下、左右-50%ずつ移動 */
-            pointer-events: none; /* ポインターイベントを無効化(クリックやホバー時の変更) */
-            transition: all 0.3s ease;
-            background-color: yellow;
-            transition-property: background,transform,width,height; /* 指定スタイルのみ変化させる */
-            transform-origin: 100% 100%;
-            z-index: 11;
-        }
-        .link-grow{
-            width: 0rem;
-            height: 0rem;
-            transform: translate(-50%,-50%);
-            background-color: rgba(100,100,100,200);
-            pointer-events: none;
-            cursor: none;
-            z-index: 11;
-        }
-        .hovered-link{
-            color: white;
-            z-index: 20;
-        }
-        .menu{
-            color: white;
-            text-decoration: none;
-            cursor: none;
-            z-index: 10;
-        }
-        .container{
-            display: grid;
-            grid-auto-flow: row dense;    /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
-            grid-template-columns: repeat(12,1fr);
-            grid-template-rows: repeat(9,1fr);
-            grid-column-gap: 10px;
-            grid-row-gap: 10px;
-            font-size: 16px;
-            background-color:midnightblue;
-            z-index: 1;
-        }
-        .header{
-            position: fixed;
-            display: grid;
-            grid-template-columns: repeat(12,1fr);
-            grid-column: 1/-1;
-            grid-row: 1/2;
-            max-height: 10vh;
-            z-index: 10;
-        }
-        .header_logo{
-            grid-column: 1/2;
-            width: 100%;
-        }
-        .header_nav{
-            font-family: 'Montserrat', sans-serif;
-            display: flex;
-            grid-column: 8/-1;
-            grid-row: 1/2;
-            justify-self: end;    /* 右端固定 */
-            justify-content: space-between;    /* 内包コンテンツの幅固定 */
-            width: 100%;    /* grid横幅の最大までナビゲーションバーとする */
-            max-height: 10vh;    /* 10vhを最大の高さにする */
-            align-self: center;
-            justify-self: end;    /* 水平方向の右寄せ */
-            font-size: 1rem;
-        }
-        .header_nav li{
-            list-style: none;    /* list要素の点を消す */
-            padding: 1rem;
-        }
-        .main_title{
-            font-family: 'Montserrat', sans-serif;
-            grid-column: 2/5;
-            grid-row: 2/5;
-            color: white;
-            align-self: center;    /* 垂直方向の中央寄せ */
-            z-index: 10;
-        }
-        .main_visual{
-            grid-column: 5/8;
-            grid-row: 2/5;
-            z-index: 10;
-        }
-        .main_visual img{
-            width: 100%;
-        }
-        .main_pager{
-            grid-column: 12/-1;
-            grid-row: 3/4;
-            color: white;
-            align-self: center;    /* 垂直方向の中央寄せ */
-            z-index: 10;
-        }
-        .main_contents{
-            grid-column: 12/-1;
-            grid-row: 4/5;
-            color: white;
-            align-self:flex-end;    /* 下寄せ */
-            z-index: 10;
-        }
-        .news_title{
-            grid-column: 2/3;
-            grid-row: 5/6;
-            color: white;
-            align-self: center;    /* 垂直方向の中央寄せ */
-            z-index: 10;
-        }
-        .news_posts{
-            grid-column: 3/11;
-            grid-row: 5/6;
-            color: white;
-            align-self: center;    /* 垂直方向の中央寄せ */
-            z-index: 10;
-        }
-        .news_scroll{
-            grid-column: 11/-1;
-            grid-row: 5/6;
-            color: white;
-            align-self: center;    /* 垂直方向の中央寄せ */
-            z-index: 10;
-        }
-        .news_scroll::after{
-            position: absolute;
-            content: '';
-            color: black;
-            width: 3em;
-            height: 3em;
-            background-color: white;
-            opacity: 0.3;
-            border-radius: 50%;
-            transform:translate(1em,-0.5em);
-            z-index: 10;
-        }
-        .main_background{
-            grid-column: 1/-1;
-            grid-row: 1/6;
-            opacity: 0.1;
-            width: 100%;
-            z-index: 2;
-        }
-        .vision_visual{
-            grid-column: 3/5;
-            grid-row: 7/9;
-            width: 100%;
-        }
-        .vision_contents{
-            grid-column: 6/11;
-            grid-row: 7/9;
-            color: white;
-            font-family: '游ゴシック体', yuGothic, sans-serif;
-        }
-        .vision_contents h2{
-            margin-top: 0px;
-        }
-        .vision_side{
-            grid-column: 1/2;
-            grid-row: 7/8;
-            color: white;
-            writing-mode: vertical-rl;
-        }
-        .vision_sidecontent{
-            transform: rotate(180deg);
-            display: inline-block;
-            width: fit-content;
-        }
-        .vision_learnmore{
-            display: inline-block;
-            align-self: center;
-            transform:translateX(1em);
-        }
-        .vision_learnmore::before{
-            position: absolute;
-            content: '';
-            width: 3em;
-            height: 3em;
-            background-color: white;
-            opacity: 0.3;
-            border-radius: 50%;
-            transform:translate(-1em,-0.5em);
-            z-index: 10;
-        }
-        .vision_learnmore:hover::before{
-            animation: learnmore_effect 1s;
-            animation-fill-mode: forwards;    /* アニメーション後に戻らない(100%の位置を維持) */
-        }
-        @keyframes learnmore_effect{
-            0%{
-                width: 3em;
-            }
-            70%{
-                width: 8em;
-                border-radius: 50%/100%;
-                transform:translate(-1em,-0.5em);
-            }
-            100%{
-                width: 3em;
-                border-radius: 50%;
-                transform:translate(5em,-0.5em);
-            }
-        }
-
-
-
-        .container_white{
-            display: grid;
-            grid-auto-flow: row dense;    /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
-            grid-template-columns: repeat(12,1fr);
-            grid-template-rows: repeat(9,1fr);
-            grid-column-gap: 10px;
-            grid-row-gap: 10px;
-            font-size: 16px;
-            background-color:white;
-            z-index: 1;
-        }
-        .activities_side{
-            grid-column: 1/2;
-            grid-row: 2/3;
-            color: midnightblue;
-            writing-mode: vertical-rl;
-        }
-        .activities_sidecontent{
-            transform: rotate(180deg);
-            display: inline-block;
-            width: fit-content;
-        }
-    </style>
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
     <div class="cursor"></div>
@@ -261,7 +25,7 @@
             <h1>I want to be<br>Number one</h1>
             <h5 style="font-family: '游ゴシック体', yuGothic, sans-serif;">常にあなたのために実行します。あなたのやりたいことを叶える会社です。</h4>
         </div>
-        <div class="main_visual"><img src="b-kv_image@2x.jpg" alt="メイン画像"></div>
+        <div class="main_visual"><img class="fuwari_animation" src="b-kv_image@2x.jpg" alt="メイン画像"></div>
         <div class="main_pager">
             <p>1</p>
             <p>---</p>
@@ -278,7 +42,7 @@
         </div>
         <a class="news_scroll" href="#">Scroll</a>
         <img class="main_background" src="b-kv_bg_image@2x.jpg" alt="背景画像">
-        <img class="vision_visual" src="b-top_vision_image@2x.jpg" alt="写真">
+        <img class="vision_visual fuwari_animation" src="b-top_vision_image@2x.jpg" alt="写真">
         <div class="vision_contents">
             <h2>あなたのやりたいを叶える会社です。<br>会社理念・ビジョンの文章から抜粋します。</h2>
             <h4>あなたのやりたいを叶える会社です。会社理念・ビジョンの文章から抜粋します。
@@ -296,19 +60,42 @@
         <div class="activities_side">
             <h4 class="activities_sidecontent">Recent Activities</h4>
         </div>
+        <div class="activities_contents">
+            <div class="activities_frame">
+                <a href="#"><img src="b-top_activities_image_01@2x.jpg" alt=""></a>
+                <p class="activities_date">May15,2020</p>
+                <p class="activities_content">活動記録の文章が入ります。活動記録の文章が入ります。活動記録の文章が入ります。</p>
+            </div>
+            <div class="activities_frame">
+                <a href="#"><img src="b-top_activities_image_02@2x.jpg" alt=""></a>
+                <p class="activities_date">May15,2020</p>
+                <p class="activities_content">活動記録の文章が入ります。活動記録の文章が入ります。活動記録の文章が入ります。</p>
+            </div>
+            <div class="activities_frame">
+                <a href="#"><img src="b-top_activities_image_03@2x.jpg" alt=""></a>
+                <p class="activities_date">May15,2020</p>
+                <p class="activities_content">活動記録の文章が入ります。活動記録の文章が入ります。活動記録の文章が入ります。</p>
+            </div>
+            <div class="activities_frame">
+                <a href="#"><img src="b-top_activities_image_01@2x.jpg" alt=""></a>
+                <p class="activities_date">May15,2020</p>
+                <p class="activities_content">活動記録の文章が入ります。活動記録の文章が入ります。活動記録の文章が入ります。</p>
+            </div>
+        </div>
     </div>
 
     <script>
         //マウスカーソルの描画
         let mouseCursor = document.querySelector(".cursor");
         let navLinks = document.querySelectorAll('.header_nav li');
+        let imageLinks = document.querySelectorAll('.activities_frame a');
         window.addEventListener('mousemove',cursor);
         function cursor(e){
             mouseCursor.style.top = e.pageY + 'px';
             mouseCursor.style.left = e.pageX + 'px';
         }
         //マウスカーソルの変更動作
-        navLinks.forEach(link =>{
+        navLinks.forEach(link =>{    //linkはquerySelectorで取得したcursorクラスの要素が入る
             //マウスカーソルがlinkに乗ったときの動作
             link.addEventListener('mouseover',()=>{
                 mouseCursor.classList.add('link-grow');
@@ -320,11 +107,69 @@
                 link.classList.remove('hovered-link');
             });
         });
+
+        //Learn moreの表示
+        imageLinks.forEach(link =>{
+            //マウスカーソルがlinkに乗ったときの動作
+            link.addEventListener('mouseover',()=>{
+                mouseCursor.classList.add('link-more');
+                mouseCursor.innerText = "Learn More";
+                link.classList.add('hovered-link');
+            });
+            //リンクを離れたときの動作
+            link.addEventListener('mouseleave',()=>{
+                mouseCursor.classList.remove('link-more');
+                mouseCursor.innerText = "";
+                link.classList.remove('hovered-link');
+            });
+        });
+
     </script>
     <script>
-        let x = document.getElementsByClassName('container_white')[0].offset;
-        let y = window.pageYOffset;
-        console.log(x + ':' + y);
+        //fuwari_animationクラスが付いている要素は、ふわっと表示させる
+        function showElementAnimation() {
+            let fuwari_image = document.getElementsByClassName('fuwari_animation');
+            if(!fuwari_image) return;    //要素がなかったら処理をキャンセル
+            let showTiming = window.innerHeight > 768 ? 200 : 40;    //200px過ぎたところで表示させる(768px以下の場合は40px)
+            let scrollY = window.pageYOffset;    //垂直方向のスクロール量を取得
+            let windowH = window.innerHeight;    //ブラウザの表示領域(垂直方向)
+
+            for(let i=0;i<fuwari_image.length;i++) {    //fuwari_animationクラスがついてる要素すべて実行
+                let elemClientRect = fuwari_image[i].getBoundingClientRect();    //ブラウザの左上を基準点として要素の座標を取得
+                let elemY = scrollY + elemClientRect.top;    //top位置の座標のみ取得
+                if(scrollY + windowH - elemY > showTiming) {    //スクロール量+表示領域-要素の位置 > どれだけの高さが表示領域に入ったら表示させるか
+                    fuwari_image[i].classList.add('is-show');    //is-showクラスを追加
+                } else if(scrollY + windowH < elemY) {
+                    fuwari_image[i].classList.remove('is-show');    //領域外に来たら再度非表示にする
+                }
+            }
+        }
+        showElementAnimation();    //最初から表示領域にある画像を表示させるため条件なし起動
+        window.addEventListener('scroll', showElementAnimation);    //スクロールをトリガにして関数を動作させる
+    </script>
+    <script>
+        //container_whiteまで来たらバナーを変える
+        function changeHeader(){
+            let container_white = document.getElementsByClassName('container_white');
+            let menu = document.getElementsByClassName('menu');
+            let header_logo = document.getElementsByClassName('header_logo');
+            let elementY = window.pageYOffset + container_white[0].getBoundingClientRect().top;
+            if(window.pageYOffset > elementY) {
+                header_logo[0].src="c-head logo_tuizyu.svg";
+                for(let i=0;i<menu.length;i++){
+                    menu[i].classList.add('text_blue');
+                    menu[i].classList.remove('text_white');
+                }
+            }else if(window.pageYOffset < elementY) {
+                header_logo[0].src="c-head logo.svg";
+                for(let i=0;i<menu.length;i++){
+                    menu[i].classList.add('text_white');
+                    menu[i].classList.remove('text_blue');
+                }
+            }
+        }
+        changeHeader();
+        window.addEventListener('scroll', changeHeader);
     </script>
 </body>
 </html>
