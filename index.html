@@ -153,15 +153,18 @@
             let container_white = document.getElementsByClassName('container_white');
             let menu = document.getElementsByClassName('menu');
             let header_logo = document.getElementsByClassName('header_logo');
+            let header = document.getElementsByClassName('header');
             let elementY = window.pageYOffset + container_white[0].getBoundingClientRect().top;
             if(window.pageYOffset > elementY) {
                 header_logo[0].src="c-head logo_tuizyu.svg";
+                header[0].classList.add('header_shadow');
                 for(let i=0;i<menu.length;i++){
                     menu[i].classList.add('text_blue');
                     menu[i].classList.remove('text_white');
                 }
             }else if(window.pageYOffset < elementY) {
                 header_logo[0].src="c-head logo.svg";
+                header[0].classList.remove('header_shadow');
                 for(let i=0;i<menu.length;i++){
                     menu[i].classList.add('text_white');
                     menu[i].classList.remove('text_blue');
