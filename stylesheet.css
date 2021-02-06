@@ -424,6 +424,7 @@ body{
 }
 .project_image{
     background-color: blue;
+    padding: 0;
 }
 .project_image img{
     padding: 0;
