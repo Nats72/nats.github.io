@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+body{
+    position: relative;
+    cursor: none;    /* もともとあるカーソルは見えなくなるようにする */
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+.font_yu{
+    font-family: '游ゴシック体','游ゴシック', YuGothic, Yu Gothic, sans-serif;
+}
+.cursor{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);    /* 上下、左右-50%ずつ移動 */
+    pointer-events: none; /* ポインターイベントを無効化(クリックやホバー時の変更) */
+    transition: all 0.2s ease;
+    background-color: yellow;
+    text-align: center;
+    line-height: 8rem;
+    transition-property: background,transform,width,height; /* 指定スタイルのみ変化させる */
+    transform-origin: 100% 100%;
+    z-index: 11;
+}
+
+.container_top_vision{
+    display: grid;
+    grid-auto-flow: row dense;  /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: 260px 340px 130px 260px 90px 80px 510px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    font-size: 16px;
+    background-color:midnightblue;
+    z-index: 1;
+  }
+
+/* HEADER */
+.header{
+    position: fixed;
+    display: grid;
+    margin: 50px 0;
+    width: 100%;
+    grid-template-columns: repeat(12,1fr);
+    opacity: 0.9;
+    z-index: 10;
+  }
+.header_logo{
+    grid-column: 1/2;
+    height: 48px;
+    margin-left: 80px;
+  }
+.header_nav{
+    display: flex;
+    grid-column: 2/-1;
+    margin-right: 80px;
+    justify-content: space-between;  /* 内包コンテンツの幅固定 */
+    align-self: center;
+    justify-self: end;  /* 水平方向の右寄せ */
+    font-size: 1rem;
+    margin: 0 80px 0 0;
+  }
+.header_nav li{
+    list-style: none;  /* list要素の点を消す */
+    padding: 1rem;
+  }
+.menu{
+    color: white;
+    text-decoration: none;
+    cursor: none;
+    z-index: 10;
+  }
+
+/* MAIN PAGE(背景：青) */
+.main_text_sidecontent{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    width: 50px;
+    height: 50px;
+    margin: 50px;
+    font-size: 22px;
+    font-weight: 500;
+    text-align: right;
+    transform: rotate(-90deg);
+    color: #f3f4f5;
+}
+.main_title1{
+    grid-column: 2/-1;
+    grid-row: 2/3;
+    width: 1144px;
+    height: 276px;
+    margin: 0px;
+    font-family: Montserrat;
+    font-size: 120px;
+    font-weight: 100;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.31;
+    letter-spacing: -6.1px;
+    color: #ffffff;
+}
+.main_title2{
+    grid-column: 2/-1;
+    grid-row: 3/4;
+    width: 694px;
+    height: 252px;
+    margin: 0px;
+    font-family: Montserrat;
+    font-size: 120px;
+    font-weight: 100;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.31;
+    letter-spacing: -6.1px;
+    color: #ffffff;
+}
+.main_title2_border{
+    height: 130px;
+    width: 100%;
+    margin: 20px 0px 0px 0px;
+    border-bottom: 1px solid #ffffff;
+}
+.main_background_text{
+    grid-column: 1/-1;
+    grid-row: 4/6;
+    width: 1600px;
+    height: 400px;
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+    font-family: Montserrat;
+    font-size: 350px;
+    font-weight: 100;
+    font-stretch: normal;
+    font-style: normal;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.01); /**/
+}
+
+.main_catchcopy{
+    grid-column: 2/-1;
+    grid-row: 5/6;
+    width: 600px;
+    height: 29px;
+    margin: 0px;
+    font-family: YuGothic;
+    font-size: 30px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    text-decoration: 1px solid #ffffff;
+    line-height: 1.73;
+    letter-spacing: normal;
+    color: #ffffff;
+}
+.main_text1{
+    grid-column: 2/6;
+    grid-row: 6/7;
+    margin: 0px;
+    width: 567px;
+    height: 170px;
+    font-family: YuGothic;
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.11;
+    letter-spacing: normal;
+    text-align: justify;
+    color: #ffffff;
+}
+.main_text2{
+    grid-column: 7/-1;
+    grid-row: 7/8;
+    width: 568px;
+    height: 230px;
+    margin: 0px;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: normal;
+    text-align: justify;
+    color: #ffffff;
+}
+
+
+
+/* MAIN PAGE(背景：白) */
+.container_middle_vision{
+    display: grid;
+    grid-auto-flow: row dense;  /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: 300px 145px 685px 385px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    font-size: 16px;
+    background-color:white;
+    z-index: 1;
+}
+.middle_text_sidecontent{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    margin: -20px 0px 0px 0px;
+    font-family: Montserrat;
+    font-size: 22px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    transform: rotate(-90deg);
+    text-align: left;
+    color: #191970
+}
+.middle_img_top{
+    grid-column: -2/-1;
+    grid-row: 1/2;
+    margin-top: -130px;
+    z-index: 2;
+}
+.middle_catchcopy{
+    grid-column: 3/7;
+    grid-row: 2/3;
+    width: 600px;
+    height: 90px;
+    margin: 0;
+    font-family: YuGothic;
+    font-size: 30px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.73;
+    letter-spacing: normal;
+    color: #272d3d;
+}
+.middle_background_text{
+    grid-column: 1/-1;
+    grid-row: 3/4;
+    width: 1600px;
+    height: 400px;
+    margin-top: 50px;
+    padding: 0;
+    opacity: 0.05;
+    font-family: Montserrat;
+    font-size: 350px;
+    font-weight: 100;
+    text-align: left;
+    color:gray;
+}
+.middle_text{
+    grid-column: 3/7;
+    grid-row: 3/4;
+    width: 566px;
+    height: 625px;
+    margin: 0;
+    font-family: YuGothic;
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.11;
+    letter-spacing: normal;
+    text-align: justify;
+    color: #272d3d;
+}
+.middle_text_top{
+    margin-bottom:30px;
+}
+.middle_text_bottom{
+    margin:0px 0px 0px 0px;
+}
+.middle_text_name{
+    grid-row: 4/5;
+    grid-column: 6/10;
+    font-family: YuGothic;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    display: flex;
+    justify-content: flex-start;
+}
+.ceo{
+    width: 180px;
+    height: 20px;
+    margin: 20px 15px 0px 75px;
+    color: rgba(156, 156, 168, 0.5);
+}
+.ceo_name{
+    width: 180px;
+    height: 20px;
+    margin: 20px 0px 0px 0px;
+    color: #272d3d;
+}
+
+/*NEXT*/
+.container_bottom_vision{
+    display: grid;
+    grid-auto-flow: row dense;  /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
+    grid-template-columns: 133px 1130px 337px;
+    grid-template-rows:575px 500px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    font-size: 16px;
+    background-color: white;
+  }
+.vision_bottom_text_service{
+    display: inline-block; 
+    grid-column: 2/2;
+    grid-row: 1/2;
+    margin-top: 320px;
+    margin-left: 84px;
+    font-family: Montserrat;
+    font-size: 60px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: -0.6px;
+    text-align: left;
+    vertical-align: middle; 
+    color: #272d3d; 
+  }
+  .vision_bottom_text_service_jp{
+    display: inline-block;
+    grid-column: 2/2;
+    grid-row: 1/2;
+    margin-top: 320px;
+    margin-left: 436px;
+    font-family: YuGothic;
+    font-size: 22px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.73;
+    letter-spacing: -0.22px;
+    text-align: left;
+    vertical-align: middle; 
+    color: #272d3d; 
+  }
+  .vision_learnmore{
+    grid-column: 2/2;
+    grid-row: 1/2;
+    margin-top: 445px;
+    margin-left: 100px;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 7.14;
+    letter-spacing: normal;
+    text-align: left;
+    color: #191970;
+  }
+  .vision_next{
+    grid-column: 3/4;
+    grid-row: 1/2;
+    width: 255px;
+    height: 105px;
+    margin-top: 380px;
+    margin-left:0;
+    padding: 0;
+    font-size: 100px;
+    font-weight: bold;
+    text-align: left;
+    background-image: url("../images/A_PC/02_VISION/1x/b-vision_next_image.jpg");
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  .vision_bottom_img{
+    grid-column: 2/-1;
+    grid-row: -2/-1;
+    width: 100%;
+    background-color: #191970;
+    opacity: 0.7;
+  }

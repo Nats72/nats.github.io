@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+body{
+  position: relative;
+  /* cursor: none;   もともとあるカーソルは見えなくなるようにする */
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+.cursor{
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);  /* 上下、左右-50%ずつ移動 */
+  pointer-events: none; /* ポインターイベントを無効化(クリックやホバー時の変更) */
+  transition: all 0.2s ease;
+  background-color: yellow;
+  text-align: center;
+  line-height: 8rem;
+  transition-property: background,transform,width,height; /* 指定スタイルのみ変化させる */
+  transform-origin: 100% 100%;
+  z-index: 11;
+}
+
+/* HEADER */
+.header{
+  position: fixed;
+  display: grid;
+  margin: 50px 0;
+  width: 100%;
+  grid-template-columns: repeat(12,1fr);
+  opacity: 0.9;
+  z-index: 10;
+}
+.header_logo{
+  grid-column: 1/2;
+  height: 48px;
+  margin-left: 80px;
+}
+.header_nav{
+  display: flex;
+  grid-column: 2/-1;
+  margin-right: 80px;
+  justify-content: space-between;  /* 内包コンテンツの幅固定 */
+  align-self: center;
+  justify-self: end;  /* 水平方向の右寄せ */
+  font-size: 1rem;
+  margin: 0 80px 0 0;
+}
+.header_nav li{
+  list-style: none;  /* list要素の点を消す */
+  padding: 1rem;
+}
+.menu{
+  color: white;
+  text-decoration: none;
+  cursor: none;
+  z-index: 10;
+}
+
+/* MAIN PAGE(背景：青) */
+.container_top{
+  display: grid;
+  grid-auto-flow: row dense;  /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
+  grid-template-columns: 133px 246px 1220px;
+  grid-template-rows: 736px 241px 150px;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  font-size: 16px;
+  background-color:midnightblue;
+  z-index: 1;
+}
+.privacy_top_img{
+  grid-column: 3/4;
+  grid-row: 1/2;
+  width: 100%;
+  opacity: 0.4;
+  background-color: #191970;
+  z-index: 2;
+}
+.privacy_top_text{
+  font-size: 310px;
+  font-family: Montserrat;
+  font-weight: 100;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.25;
+  letter-spacing: -32.04px;
+  color: white;
+  margin: 713px 0px 0px 0px;
+}
+
+/* MAIN PAGE(背景：白) */
+.container_bottom{
+  display: grid;
+  grid-auto-flow: row dense;  /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
+  grid-template-rows: 442px 370px 334px 485px 295px 333px 332px 256px 194px 320px;
+  grid-row-gap: 10px;
+  font-size: 16px;
+  background-color:white;
+  z-index: 1;
+}
+.privacy_hr {
+  border: solid 3px #191970;
+  background-color: #191970;
+  height:3px;
+  width: 48px;
+  border: none;
+  margin-top: 200px;
+  margin-left: 0px;
+ }
+.privacy_overview{
+  grid-row: 1/2;
+  width:50%;
+  margin-top: 148px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+.privacy_overview_text{
+  font-family: YuGothic;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.08;
+  letter-spacing: normal;
+  color: #272d3d;
+}

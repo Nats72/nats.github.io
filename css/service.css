@@ -21,7 +21,7 @@ body{
     z-index: 1;
 =======
   position: relative;
-  cursor: none;  /* もともとあるカーソルは見えなくなるようにする */
+  /* cursor: none;  /* もともとあるカーソルは見えなくなるようにする */
   margin: 0;
   font-family: 'Montserrat', sans-serif;
 }
@@ -185,9 +185,9 @@ body{
   font-size: 16px;
   background-color: white;
 }
-.service_text_service_side_black{
+.service_text_service_side_blue{
   grid-column: 1/2;
-  color: black;
+  color: midnightblue;
   writing-mode: vertical-rl;
   margin-top: 150px;
 }
