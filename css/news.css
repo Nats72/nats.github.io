@@ -69,31 +69,6 @@ body{
   background-color:midnightblue;
   z-index: 1;
 }
-.news_text_side{
-  grid-column: 1/2;
-  grid-row: 1/2;
-  width: fit-content;
-  writing-mode: vertical-rl;
-  color: white;
-  margin-top: 273px;
-  margin-left: 83px;
-}
-.news_text_line{
-  display: inline-block;
-  vertical-align: middle;
-  opacity: 0.4;
-  padding:20px 5px 20px 0px;
-  text-decoration: line-through;
-}
-.news_text_top_sidecontent{
-  display: inline-block;
-  opacity: 0.7;
-  transform: rotate(180deg);
-}
-.news_text_news_sidecontent{
-  display: inline-block;
-  transform: rotate(180deg);
-}
 .news_top_img{
   grid-column: 3/-1;
   grid-row: 1/2;
@@ -103,8 +78,6 @@ body{
   z-index: 2;
 }
 .news_top_text{
-  grid-column: 3/-1;
-  grid-row: 1/3;
   font-size: 370px;
   font-family: Montserrat;
   font-weight: 100;
@@ -113,9 +86,7 @@ body{
   line-height: 0.25;
   letter-spacing: -32.04px;
   color: white;
-  margin-top: 713px;
-  margin-right: 50px;
-  text-align: right;
+  margin: 713px 100px 0px 690px;
 }
 .news_block_side{
   grid-column: 2/3;
@@ -265,20 +236,6 @@ body{
   letter-spacing: normal;
   text-align: left;
   color: #191970;
-}
-.news_next{
-  grid-column: 2/3;
-  grid-row: 1/2;
-  height: 80px;
-  margin-top: 297px;
-  margin-left:800px;
-  font-size: 84px;
-  font-weight: bold;
-  color: transparent;
-  text-align: center;
-  background-image: url("../images/A_PC/04_COMPANY/1x/b-company_next_image.jpg");
-  background-position: 0% 85%;
-  -webkit-background-clip: text;
 }
 .news_bottom_img{
   grid-column: 2/3;

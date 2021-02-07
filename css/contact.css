@@ -1,1 +1,84 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+body {
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Windows や MacOS に游ゴシックのフォントを適用させる */
+.font_yu {
+  font-family: '游ゴシック体','游ゴシック', YuGothic, Yu Gothic, sans-serif;
+}
+
+.container-top {
+  display: grid;
+  grid-auto-flow: row dense; /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
+  grid-template-columns: repeat(12,1fr);
+  grid-template-rows: repeat(9,1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  font-size: 16px;
+  background-color:midnightblue;
+  z-index: 1;
+}
+
+.text_white {
+  color: white;
+}
+
+.text_blue {
+  color: midnightblue;
+}
+
+.text_black {
+  color: black;
+}
+
+/* header 部分 */
+.header {
+  position: fixed;
+  display: grid;
+  margin: 50px 0;
+  width: 100%;
+  grid-template-columns: repeat(12,1fr);
+  opacity: 0.9;
+  z-index: 10;
+}
+
+.header_logo {
+  grid-column: 1/2;
+  height: 48px;
+  margin-left: 80px;
+}
+
+.header_nav {
+  display: flex;
+  grid-column: 2/-1;
+  margin-right: 80px;
+  justify-content: space-between; /* 内包コンテンツの幅固定 */
+  align-self: center;
+  justify-self: end; /* 水平方向の右寄せ */
+  font-size: 1rem;
+  margin: 0 80px 0 0;
+}
+
+.header_nav li {
+  list-style: none; /* list要素の点を消す */
+  padding: 1rem;
+}
+
+.menu {
+  color: white;
+  text-decoration: none;
+  cursor: none;
+  z-index: 10;
+}
+
+.side .border {
+  color: #fff;
+  display: inline-block;
+  vertical-align: middle;
+  opacity: 0.7;
+  width: 20px;
+  margin-left: 400px;
+}

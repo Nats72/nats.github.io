@@ -27,20 +27,20 @@
         <p class="main-word-center">I want to be<br>Number one</p>
         <p class="main-word-bottom">あなたのやりたいを叶える会社です。</p>
       </div>
-      <a class="main_visual wrap_animation learn_more" href="#">
-        <img src="images/A_PC/01_TOP/2x/b-kv_image@2x.jpg" alt="メイン画像">
+      <a id="main-link" class="main_visual wrap_animation learn_more" href="#">
+        <img id="main-img" src="images/A_PC/01_TOP/2x/b-kv_image@2x.jpg" alt="メイン画像">
       </a>
       <div class="main_pager">
-        <p>1</p>
-        <p>---</p>
-        <p>4</p>
+        <p id="page-count"></p>
+        <hr>
+        <p id="page-count-total"></p>
       </div>
       <div class="main_contents">
         <p>Contents</p>
         <p>Vision</p>
       </div>
-      <div class="main_prevarea"></div>
-      <div class="main_nextarea"></div>
+      <div class="main_prevarea" id="prev"></div>
+      <div class="main_nextarea" id="next"></div>
     </div>
     <img class="background_img" src="images/A_PC/01_TOP/2x/b-kv_bg_image@2x.jpg" alt="背景画像">
 
@@ -243,6 +243,47 @@
     }
     changeHeader();
     window.addEventListener('scroll', changeHeader);
+  </script>
+  <script>
+    let count = document.getElementById('page-count');
+    let count_total = document.getElementById('page-count-total');
+    let main_link = document.getElementById('main-link');
+    let main_img = document.getElementById('main-img');
+    let slide_menu = [
+      {"imgPath":"images/A_PC/01_TOP/2x/b-kv_image@2x.jpg"},
+      {"imgPath":"images/A_PC/01_TOP/2x/b-top_activities_image_02@2x.jpg"},
+      {"imgPath":"images/A_PC/01_TOP/2x/b-kv_image@2x.jpg"},
+      {"imgPath":"images/A_PC/01_TOP/2x/b-top_activities_image_02@2x.jpg"},
+      {"imgPath":"images/A_PC/01_TOP/2x/b-kv_image@2x.jpg"}
+    ]
+
+    let page = 1;
+    count.textContent = page;
+    count_total.textContent = slide_menu.length;
+
+    //PREV押下時の動作
+    document.getElementById('prev').addEventListener('click',function(){
+      if(page <= 1){
+        page = slide_menu.length;
+        main_link.href = "";
+        main_img.src = slide_menu[page-1].imgPath;
+      }else{
+        page = page-1;
+        main_img.src = slide_menu[page-1].imgPath;
+      }
+      count.textContent = page;
+    });
+    //NEXT押下時の動作
+    document.getElementById('next').addEventListener('click',function(){
+      if(page >= slide_menu.length){
+        page = 1;
+        main_img.src = slide_menu[page-1].imgPath;
+      }else{
+        page = page+1;
+        main_img.src = slide_menu[page-1].imgPath;
+      }
+      count.textContent = page;
+    });
   </script>
 </body>
 </html>

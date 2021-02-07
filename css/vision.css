@@ -305,7 +305,6 @@ body{
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     font-size: 16px;
-    background-color: white;
   }
 .vision_bottom_text_service{
     display: inline-block; 
@@ -356,16 +355,20 @@ body{
     text-align: left;
     color: #191970;
   }
+
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+  
   .vision_next{
     grid-column: 3/4;
     grid-row: 1/2;
     width: 255px;
-    height: 105px;
+    height: 120px;
     margin-top: 380px;
     margin-left:0;
     padding: 0;
-    font-size: 100px;
-    font-weight: bold;
+    font-family: Montserrat;
+    font-size: 116px;
+    font-weight: 900;
     text-align: left;
     background-image: url("../images/A_PC/02_VISION/1x/b-vision_next_image.jpg");
     -webkit-background-clip: text;
@@ -374,7 +377,9 @@ body{
   .vision_bottom_img{
     grid-column: 2/-1;
     grid-row: -2/-1;
-    width: 100%;
-    background-color: #191970;
+    width: 1467px;
+    height: 500px;
     opacity: 0.7;
+    background-color: #191970;
+    z-index: 5;
   }

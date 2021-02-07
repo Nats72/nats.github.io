@@ -1,25 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 body{
-<<<<<<< HEAD
-    position: relative;
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-}
-.font_yu{
-    font-family: '游ゴシック体','游ゴシック', YuGothic, Yu Gothic, sans-serif;
-}
-
-.container{
-    display: grid;
-    grid-auto-flow: row dense;    /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
-    grid-template-columns: repeat(12,1fr);
-    grid-template-rows: 740px 310px;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-    font-size: 16px;
-    background-color:midnightblue;
-    z-index: 1;
-=======
   position: relative;
   /* cursor: none;  /* もともとあるカーソルは見えなくなるようにする */
   margin: 0;
@@ -41,8 +21,6 @@ body{
   z-index: 11;
 }
 
-<<<<<<< HEAD
-=======
 .container_top{
   display: grid;
   grid-auto-flow: row dense;  /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
@@ -53,10 +31,8 @@ body{
   font-size: 16px;
   background-color:midnightblue;
   z-index: 1;
->>>>>>> 5ee5c314185f3a992d2a562c6926316a9b624d96
 }
 
->>>>>>> e3aff3b873fd5833eac0cbd3589eaccbd87ad7d7
 /* HEADER */
 .header{
   position: fixed;
@@ -131,40 +107,28 @@ body{
 }
 
 /* MAIN PAGE(背景：青) */
-.container_top{
-  display: grid;
-  grid-auto-flow: row dense;  /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
-  grid-template-columns: 133px 247px 1220px;
-  grid-template-rows: 736px 312px;
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-  font-size: 16px;
-  background-color:midnightblue;
-  z-index: 1;
-}
 .service_text_side{
   grid-column: 1/2;
   grid-row: 1/2;
   width: fit-content;
-  writing-mode: vertical-rl;
+  transform: rotate(-90deg);
   color: white;
-  margin-top: 273px;
-  margin-left: 83px;
 }
-.service_text_line{
+.side hr{
   display: inline-block;
   vertical-align: middle;
-  opacity: 0.4;
-  padding:20px 5px 20px 0px;
-  text-decoration: line-through;
+  opacity: 0.7;
+  width: 20px;
+  margin-left: 400px;
 }
 .service_text_top_sidecontent{
   display: inline-block;
   opacity: 0.7;
-  transform: rotate(180deg);
+  margin-left: 400px;
 }
 .service_text_service_sidecontent{
   display: inline-block;
+  margin-left: 400px;
   transform: rotate(180deg);
 }
 .service_top_img{
@@ -183,11 +147,9 @@ body{
   font-stretch: normal;
   font-style: normal;
   line-height: 0.25;
-  letter-spacing: -12.04px;
+  letter-spacing: -32.04px;
   color: white;
-  margin-top: 680px;
-  margin-left: 200px;
-  text-align: right;
+  margin: 713px 0 547px 250px;
 }
 >>>>>>> 5ee5c314185f3a992d2a562c6926316a9b624d96
 
@@ -204,12 +166,13 @@ body{
 }
 .service_text_service_side_blue{
   grid-column: 1/2;
-  grid-row: 2/3;
   color: midnightblue;
   writing-mode: vertical-rl;
+  margin-top: 150px;
 }
 .service_text_service_middle_sidecontent{
   display: inline-block;
+  margin-left: 400px;
   transform: rotate(180deg);
 }
 .service_middle_title_content{
@@ -237,25 +200,16 @@ body{
   grid-row: 2/3;
   width: 100%;
 }
-.service_line_side_content{
-  display: inline-block;
-  text-decoration: line-through;
-  transform: rotate(180deg);
-  padding-right: 2px;
-  padding-bottom: 19px;
-}
 .service_text_side_up{
   grid-column: 2/3;
   grid-row: 2/3;
-  color: #191970;
+  color: black;
   writing-mode: vertical-rl;
 }
 .service_text_side_up_content{
-  display: inline-block;
   font-family: Montserrat;
   transform: rotate(180deg);
   text-align: right;
-  font-weight: bold;
   margin-right: 0px;
 }
 .service_middle_title_up{
@@ -280,16 +234,14 @@ body{
 .service_text_side_middle{
   grid-column: 6/7;
   grid-row: 4/5;
-  color: #191970;
+  color: black;
   writing-mode: vertical-rl;
   margin-right: 207px;
 }
 .service_text_side_middle_content{
-  display: inline-block;
   font-family: Montserrat;
   transform: rotate(180deg);
   text-align: right;
-  font-weight: bold;
 }
 .service_middle_title_middle{
   grid-column: 3/4;
@@ -315,11 +267,9 @@ body{
   writing-mode: vertical-rl;
 }
 .service_text_side_bottom_content{
-  display: inline-block;
   font-family: Montserrat;
   transform: rotate(180deg);
   text-align: right;
-  font-weight: bold;
 }
 .service_middle_title_bottom{
   grid-column: 5/6;
@@ -382,7 +332,7 @@ body{
 .service_learnmore{
   grid-column: 2/3;
   grid-row: 1/2;
-  margin-top: 400px;
+  margin-top: 445px;
   margin-left: 100px;
   font-family: Montserrat;
   font-size: 14px;
@@ -397,14 +347,14 @@ body{
 .service_next{
   grid-column: 2/3;
   grid-row: 1/2;
-  margin-top: 400px;
+  margin-top: 300px;
   margin-left:800px;
-  font-size: 84px;
+  font-size: 20rem;
   font-weight: bold;
   color: transparent;
   text-align: center;
-  background-image: url("../images/A_PC/04_COMPANY/1x/b-company_next_image.jpg");
-  background-position: 0% 85%;
+  background-image: url("..\images\A_PC\04_COMPANY\1x\b-company_activities_image_04.jpg");
+  background-position: top;
   -webkit-background-clip: text;
 }
 .service_bottom_img{
