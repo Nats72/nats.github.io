@@ -1,8 +1,9 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500&display=swap');
 body {
   position: relative;
   font-family: 'Montserrat', sans-serif;
+  width: 1600px;
 }
 
 /* Windows や MacOS に游ゴシックのフォントを適用させる */
@@ -13,25 +14,11 @@ body {
 .container-top {
   display: grid;
   grid-auto-flow: row dense; /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
-  grid-template-columns: repeat(12,1fr);
-  grid-template-rows: repeat(9,1fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-  font-size: 16px;
-  background-color:midnightblue;
-  z-index: 1;
-}
-
-.text_white {
-  color: white;
-}
-
-.text_blue {
-  color: midnightblue;
-}
-
-.text_black {
-  color: black;
+  grid-template-columns: 130px 250px 300px 845px 75px;
+  grid-template-rows: 620px 120px 160px 150px;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+  background-color: #191970;
 }
 
 /* header 部分 */
@@ -74,11 +61,470 @@ body {
   z-index: 10;
 }
 
-.side .border {
-  color: #fff;
-  display: inline-block;
-  vertical-align: middle;
-  opacity: 0.7;
-  width: 20px;
-  margin-left: 400px;
+/* トップ部分にある縦ライン */
+.container-top .vertical-line {
+  border-right: solid 1px;
+  border-color: rgba(255, 255, 255, 0.12);
 }
+
+.container-top .center-line {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 5;
+  z-index: 5;
+}
+
+.container-top .right-line {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 5;
+}
+
+/* トップのサイドバー */
+.side {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 5;
+  color: #f3f4f5;
+  font-weight: 500;
+  position: relative; /* 子要素の配置基準 */
+}
+
+.side-area {
+  height: 130px;
+  width: 1050px;
+  transform-origin: left top; /* 回転起点を左上にする */
+  transform: rotate(-90deg);
+  position: absolute; /* 親要素を基準 bottom left を指定 */
+  bottom: -130px; /* 幅分 */
+  left: 0px;
+}
+
+/* サイドバーの文字たち */
+.site-text {
+  height: 20px;
+  width: 200px;
+  margin: 85px 270px 30px 580px; /* Zeplin より計算 */
+}
+
+.side .top{
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.side .border-style {
+  display: inline-block;
+  height: 1px;
+  width: 40px;
+  background-color: #fff;
+  opacity: 0.5;
+}
+
+.side .border{
+  margin: auto 20px 3px 20px; /* 3pxは勘 */
+}
+
+.side .contact{
+  display: inline-block;
+}
+
+/* トップの画像と文字 */
+/* 画像と文字を透明化するための背景の位置 */
+.img-position {
+  grid-column-start: 3;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.top-img {
+  opacity: 0.4;
+  z-index: 3;
+}
+
+.background-screen {
+  background-color: #191970;
+  z-index: 2;
+}
+
+/* 画像に重なる文字の共通部分 */
+.top-text {
+  grid-column-start: 3;
+  grid-column-end: 6;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  font-size: 400px;
+  font-family: 'Montserrat';
+  font-weight: 100;
+  color: #fff;
+  /* color: black; */
+  line-height: 280px; /* グリッドの高さと同じにする */
+  text-align: left;
+  /* overflow: hidden; */
+}
+
+.text-transparent {
+  display: block;
+  opacity: 0.3;
+  z-index: 4;
+}
+
+.text-opacity {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* お問い合わせのメイン部分 */
+.container-main {
+  display: grid;
+  grid-auto-flow: row dense; /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
+  grid-template-columns: 130px 245px 250px 600px 300px 75px; /* 630px 270px にすれば guide は綺麗に収まる ただ入力のグリッドのピクセルも直す必要がある */
+  grid-template-rows: 140px 40px 55px 1395px 120px 110px 210px;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+  z-index: 1;
+}
+
+/* メイン部分にある縦や横ライン */
+.container-main .vertical-line {
+  border-right: solid 1px;
+  border-color: #2e2e2e;
+  opacity: 0.12;
+}
+
+.container-main .left-line {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 7;
+}
+
+.container-main .right-line {
+  grid-column-start: 5;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 7;
+}
+
+.horizon-line {
+  border-bottom: solid 1px;
+  border-color: #2e2e2e;
+  opacity: 0.12;
+}
+
+.container-main .bottom-line {
+  grid-column-start: 2;
+  grid-column-end: 7;
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
+
+/* メインのプログレスバー */
+.side-progress {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 5;
+  margin: 0 auto auto 65px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #9c9ca8;
+}
+
+.progress-line {
+  height: 60px;
+  width: 1px;
+  margin: 20px auto 20px auto;
+  background-color: #9c9ca8;
+}
+
+.progress-now-text {
+  text-decoration: underline;
+  text-decoration-color: #191970;
+  color: #191970;
+}
+
+.progress-now-line {
+  background-color: #191970;
+}
+
+/* 入力に対する案内 */
+.contact-guide {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  font-size: 14px;
+  font-weight: 500;
+  color: #272d3d;
+  line-height: 1.86;
+}
+
+.contact-guide span {
+  color: #191970;
+}
+
+/* 入力欄たち */
+.wpcf7-form {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 4;
+  grid-row-end: 6;
+  display: grid;
+  grid-template-columns: 850px;
+  grid-template-rows: 
+    118px
+    150px
+    118px
+    118px
+    118px
+    118px
+    118px
+    295px
+    150px 62px
+    150px
+  ;
+  z-index: 2; /* 確認ボタンとデザイン横線の重なり */
+}
+
+/* 項目名 */
+.item {
+  margin: 20px auto auto 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #272d3d;
+}
+
+/* 入力欄の背景 */
+.input-background {
+  height: 100%;
+  width: 100%;
+  background-color: #f6f6fa;
+  font-size: 14px;
+  cursor: text; /* クリックできる部分はマウスを変化させる */
+}
+
+/* 入力欄 */
+.input-area {
+  width: 90%; /* 左右に余白を設けるため */
+  margin: 20px auto auto 30px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  line-height: 1.86; /* デザインで指定されていたから */
+  font-weight: 500;
+  font-size: 14px;
+  outline: none;
+}
+
+/* プレースホルダ */
+::placeholder {
+  opacity: 0.5;
+  color: #272d3d;
+}
+
+/* お問い合わせの種類 */
+.group-contact-kind {
+  display: grid;
+  grid-template-columns: 250px 600px;
+  grid-template-rows: 68px 50px;
+}
+
+.contact-kind {
+  width: 95%;
+  margin: 0;
+  /* input-area の代わり margin プラス調整 */
+  padding: 25px 0 24px 30px;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0);
+  line-height: 1.86; /* デザインで指定されていたから */
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer; /* クリックできる部分はマウスを変化させる */
+}
+
+/* 読み込み時のプレースホルダを薄くできないせめてもの頑張り */
+.group-contact-kind option:first-child {
+  opacity: 0.5;
+  color: #272d3d;
+}
+
+/* 御社名/個人 */
+.group-company-name {
+  display: grid;
+  grid-template-columns: 250px 600px;
+  grid-template-rows: 68px 32px 50px;
+}
+
+.group-company-name .guide {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  margin: auto auto 0 30px;
+  opacity: 0.5;
+  color: #272d3d;
+  font-size: 14px;
+}
+
+/* お名前 */
+.group-your-name {
+  display: grid;
+  grid-template-columns: 250px 600px;
+  grid-template-rows: 68px 50px;
+}
+
+/* お名前（カナ） */
+.group-your-name-kana {
+  display: grid;
+  grid-template-columns: 250px 600px;
+  grid-template-rows: 68px 50px;
+}
+
+/* 電話番号 */
+.group-tel {
+  display: grid;
+  grid-template-columns: 250px 600px;
+  grid-template-rows: 68px 50px;
+}
+
+/* メールアドレス */
+.group-email-address {
+  display: grid;
+  grid-template-columns: 250px 600px;
+  grid-template-rows: 68px 50px;
+}
+
+/* メールアドレス（確認） */
+.group-email-address-confirm {
+  display: grid;
+  grid-template-columns: 250px 600px;
+  grid-template-rows: 68px 50px;
+}
+
+/* お問い合わせ内容 */
+.group-contact-textarea {
+  display: grid;
+  grid-template-columns: 250px 600px;
+  grid-template-rows: 175px 120px;
+}
+
+.contact-textarea {
+  height: 78%; /* 下の余白を設けるため */
+}
+
+/* プライバシーポリシー */
+.group-agree-privacy {
+  border: solid 1px #dadadf;
+  font-weight: bold;
+  color: #191970;
+  position: relative; /* クリック範囲を広くするため外 */
+  cursor: pointer; /* クリックできる部分はマウスを変化させる */
+}
+
+.item-agree-privacy {
+  /* display: none; */
+  display: inline-block;
+  position: absolute; /* クリック範囲を広くするため内 */
+  margin: auto 313px auto 313px; /* (850-220)/2 */
+  font-size: 14px;
+  text-align: center;
+  line-height: 2;
+}
+
+.agree-privacy {
+  position: relative;
+  margin: 30px 97px auto 97px; /* (220-26)/2 */
+  height: 26px;
+  width: 26px;
+}
+
+.under-bar {
+  display: block;
+  font-family: 'Montserrat';
+  font-weight: normal;
+  text-decoration: underline;
+  text-decoration-color: #191970;
+}
+
+/* 確認ボタン */
+.confirm {
+  grid-row-start: 11;
+  grid-row-end: 12;
+  font-family: 'Montserrat';
+  color: #f6f6fa;
+  /* ホバー前 */
+  background-color: #191970;
+  border: none;
+  cursor: pointer; /* クリックできる部分はマウスを変化させる */
+}
+
+.confirm:hover {
+  color: #191970;
+  /* ホバー後 */
+  background-color: #f6f6fa;
+  text-decoration: underline;
+  text-decoration-color: #191970;
+}
+
+/* 戻るボタン */
+.back {
+  display: none;
+  grid-row-start: 9;
+  grid-row-end: 10;
+}
+
+/* 送信ボタン */
+.send {
+  display: none;
+  grid-row-start: 9;
+  grid-row-end: 10;
+}
+
+/* アスタリスクを付ける */
+.asterisk::after {
+  content: " *";
+  color: #191970;
+}
+
+/* エラー文 */
+.wpcf7-not-valid-tip {
+  /* 暫定であり 実環境での調整が必要 */
+  margin: 20px auto auto 30px;
+}
+
+/* フッター部分 */
+.container-bottom {
+  display: grid;
+  grid-auto-flow: row dense; /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
+  grid-template-columns: 1600px;
+  grid-template-rows: 900px;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+  background-color: #26263b;
+}
+
+/* スクロールバー */
+/* スクロールバー全体(左右にも影響) */
+::-webkit-scrollbar{
+  height: 8px;
+  width: 8px;
+}
+/* 軌道 */
+::-webkit-scrollbar-track{
+  background: rgba(255, 255, 255, 0); /* 透明にしたいけどならない */
+}
+/* 動く部分 */
+::-webkit-scrollbar-thumb{
+  background: #191970;
+  border-radius: 4px;
+}
+
+/* 確認ページのとき */
+
+
+
+/* 完了ページのとき */

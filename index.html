@@ -12,7 +12,7 @@
     <header class="header">
       <a href=""><img class="header_logo" src="images/C_logo/SVG/c-head logo.svg" alt="logo"></a>
       <ul class="header_nav">
-        <li><a class="menu" id="menu_vision" href="vision">Vision</a></li>
+        <li><a class="menu" id="menu_vision" href="vision.html">Vision</a></li>
         <li><a class="menu" id="menu_service" href="service.html">Service<sup>3</sup></a></li>
         <li><a class="menu" id="menu_company" href="company.html">Company</a></li>
         <li><a class="menu" id="menu_event" href="event">Event</a></li>
@@ -32,17 +32,19 @@
       </a>
       <div class="main_pager">
         <p id="page-count"></p>
-        <hr>
+        <progress id="page-progress" class="page-progress" value="0" max="1000"></progress>
         <p id="page-count-total"></p>
       </div>
       <div class="main_contents">
-        <p>Contents</p>
-        <p>Vision</p>
+        <p class="main-content">Contents</p>
+        <a class="main-category" id="page-category" href="#"></a>
       </div>
       <div class="main_prevarea" id="prev"></div>
       <div class="main_nextarea" id="next"></div>
+      <div class="main-progress"><progress id="page-progress-wide" class="page-progress-wide" value="0" max="1000"></progress></div>
     </div>
     <img class="background_img" src="images/A_PC/01_TOP/2x/b-kv_bg_image@2x.jpg" alt="背景画像">
+
 
     <div class="news">
       <p class="news_title">Latest News</p>
@@ -71,7 +73,17 @@
         <a class="vision_learnmore" href="#">Learn more +</a>
       </div>
     </div>
+    <div class="vision_background">
+      <ul>
+        <li>CompanyVision</li>
+      </ul>
+      <ul>
+        <li>CompanyVision</li>
+      </ul>
+    </div>
   </div>
+  
+  
   <div class="container_white">
     <div class="activities_side">
       <h4 class="activities_sidecontent">Recent Activities</h4>
@@ -106,7 +118,7 @@
     <div class="project">
       <h1>INTERNATIONAL<br>SUPPORT PROJECT</h1>
       <a class="white_learnmore project_learnmore" href="#">Learn more +</a>
-      <div class="project_image"><img src="images/A_PC/01_TOP/2x/b-top_service_image_01@2x.jpg" alt=""></div>
+      <div class="project_image"><img class="project_image" src="images/A_PC/01_TOP/2x/b-top_service_image_01@2x.jpg" alt=""></div>
     </div>
   </div>
 
@@ -226,14 +238,14 @@
       let header = document.getElementsByClassName('header');
       let elementY = window.pageYOffset + container_white[0].getBoundingClientRect().top;
       if(window.pageYOffset > elementY) {
-        header_logo[0].src="c-head logo_tuizyu.svg";
+        header_logo[0].src="images/C_logo/SVG/c-head logo_tuizyu.svg";
         header[0].classList.add('header_shadow');
         for(let i=0;i<menu.length;i++){
           menu[i].classList.add('text_blue');
           menu[i].classList.remove('text_white');
         }
       }else if(window.pageYOffset < elementY) {
-        header_logo[0].src="c-head logo.svg";
+        header_logo[0].src="images/C_logo/SVG/c-head logo.svg";
         header[0].classList.remove('header_shadow');
         for(let i=0;i<menu.length;i++){
           menu[i].classList.add('text_white');
@@ -250,11 +262,11 @@
     let main_link = document.getElementById('main-link');
     let main_img = document.getElementById('main-img');
     let slide_menu = [
-      {"imgPath":"images/A_PC/01_TOP/2x/b-kv_image@2x.jpg"},
-      {"imgPath":"images/A_PC/01_TOP/2x/b-top_activities_image_02@2x.jpg"},
-      {"imgPath":"images/A_PC/01_TOP/2x/b-kv_image@2x.jpg"},
-      {"imgPath":"images/A_PC/01_TOP/2x/b-top_activities_image_02@2x.jpg"},
-      {"imgPath":"images/A_PC/01_TOP/2x/b-kv_image@2x.jpg"}
+      {"category":"Vision","imgPath":"images/A_PC/01_TOP/2x/b-kv_image@2x.jpg"},
+      {"category":"Service","imgPath":"images/A_PC/01_TOP/2x/b-top_activities_image_02@2x.jpg"},
+      {"category":"Company","imgPath":"images/A_PC/01_TOP/2x/b-kv_image@2x.jpg"},
+      {"category":"Event","imgPath":"images/A_PC/01_TOP/2x/b-top_activities_image_02@2x.jpg"},
+      {"category":"Contact","imgPath":"images/A_PC/01_TOP/2x/b-kv_image@2x.jpg"}
     ]
 
     let page = 1;
@@ -262,28 +274,55 @@
     count_total.textContent = slide_menu.length;
 
     //PREV押下時の動作
-    document.getElementById('prev').addEventListener('click',function(){
+    document.getElementById('prev').addEventListener('click',function prevClick(){
       if(page <= 1){
         page = slide_menu.length;
         main_link.href = "";
-        main_img.src = slide_menu[page-1].imgPath;
       }else{
         page = page-1;
-        main_img.src = slide_menu[page-1].imgPath;
       }
+      document.getElementById('page-progress').value = 0;
+      document.getElementById('page-progress-wide').value = 0;
+      document.getElementById('page-category').textContent = slide_menu[page-1].category;
+      main_img.src = slide_menu[page-1].imgPath;
       count.textContent = page;
     });
     //NEXT押下時の動作
-    document.getElementById('next').addEventListener('click',function(){
+    document.getElementById('next').addEventListener('click',function nextClick(){
       if(page >= slide_menu.length){
         page = 1;
-        main_img.src = slide_menu[page-1].imgPath;
       }else{
         page = page+1;
-        main_img.src = slide_menu[page-1].imgPath;
       }
+      document.getElementById('page-progress').value = 0;
+      document.getElementById('page-progress-wide').value = 0;
+      document.getElementById('page-category').textContent = slide_menu[page-1].category;
+      main_img.src = slide_menu[page-1].imgPath;
       count.textContent = page;
     });
+    
+    //プログレスバーの表示
+    function prog(){
+      if (document.getElementById('page-progress').value < 1000 ) {
+        document.getElementById('page-progress').value++;
+        document.getElementById('page-progress-wide').value++;
+        document.getElementById('page-category').textContent = slide_menu[page-1].category;
+        setTimeout(prog, 10);  //10msごとに0.1%あがる
+      }else if(document.getElementById('page-progress').value = 1000){
+        document.getElementById('page-progress').value = 0;
+        document.getElementById('page-progress-wide').value = 0;
+        document.getElementById('page-category').textContent = slide_menu[page-1].category;
+        if(page >= slide_menu.length){
+          page = 1;
+        }else{
+          page = page+1;
+        }
+        main_img.src = slide_menu[page-1].imgPath;
+        count.textContent = page;
+        setTimeout(prog, 10);  //10msごとに0.1%あがる
+      }
+    }
+    prog();
   </script>
 </body>
 </html>

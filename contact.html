@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/contact.css">
   </head>
   <body>
+    <!-- トップ部分 -->
     <div class="container-top">
       <header class="header">
         <img class="header_logo" src="./images/C_logo/SVG/c-head logo.svg" alt="logo">
@@ -17,113 +18,152 @@
           <li><a class="menu" id="menu_service" href="service.html">Service<sup>3</sup></a></li>
           <li><a class="menu" id="menu_company" href="company.html">Company</a></li>
           <li><a class="menu" id="menu_event" href="event">Event</a></li>
-          <li><a class="menu" id="menu_recruit" href="recruit">Recruit</a></li>
           <li><a class="menu" id="menu_contact" href="contact.html">Contact</a></li>
         </ul>
       </header>
-      <aside class="side">
-        <div class="">Top</div>
-        <div class="border"></div>
-        <div class="">Contact</div>
+
+      <aside class="side vertical-line">
+        <div class="side-area">
+          <p class="site-text">
+            <span class="top">Top</span>
+            <span class="border-style border"></span>
+            <span class="contact">Contact</span>
+          </p>
+        </div>
       </aside>
-      <img src="./images/A_PC/06_CONTACT/2x/b-contact_kv_image@2x.png" alt="背景画像">
+
+      <img class="img-position top-img" src="./images/A_PC/06_CONTACT/2x/b-contact_kv_image@2x.png" alt="背景画像">
+      <div class="img-position background-screen"></div>
+      <h1 class="top-text text-opacity">Contact</h1>
+      <span class="top-text text-transparent">Contact</span>
+
+      <div class="center-line vertical-line"></div>
+      <div class="right-line vertical-line"></div>
     </div>
-    <div class="container-main">
-      <form method="post" class="wpcf7-form init" novalidate="novalidate" data-status="init">
-        <div>
-          <label> お問い合わせの種類
-            <span class="contact-kind">
-              <select name="contact-kind" class="contact-kind" id="contact-kind" aria-required="true" aria-invalid="false">
+
+    <!-- お問い合わせのメイン部分 -->
+    <div class="container-main font_yu">
+      <p class="contact-guide">
+        下記フォームの必須項目をご入力いただき、プライバシーポリシーに同意の上、送信してください。
+        後日弊社より折り返しご連絡させていただきます。<span>(* は必須項目です)</span>
+      </p>
+
+      <form action="/contact_ver02/#wpcf7-f15-p16-o1" method="post" class="wpcf7-form init" novalidate="novalidate" data-status="init">
+        <div class="group-contact-kind">
+          <span class="item asterisk">お問い合わせの種類</span>
+          <label class="input-background">
+            <span class="item-contact-kind">
+             <select name="item-contact-kind" class="contact-kind" aria-required="true" aria-invalid="false">
                 <option value="">選択してください</option>
                 <option value="採用に関するお問い合わせ">採用に関するお問い合わせ</option>
                 <option value="種類02">種類02</option>
-                <option value="種類03">種類03</option>
+                <option value="その他">その他</option>
               </select>
             </span>
           </label>
         </div>
-  
-        <div>
-          <label> 御社名/個人
-            <span class="company-name">
-              <input type="text" name="company-name" value="" size="40" class="company-name" aria-required="true" aria-invalid="false" placeholder="株式会社SECOND">
+
+        <div class="group-company-name">
+          <span class="item asterisk">会社名/個人</span>
+          <label class="input-background">
+            <span class="item-company-name">
+              <input type="text" name="item-company-name" value="" size="40" class="company-name input-area" aria-required="true" aria-invalid="false" placeholder="例)  株式会社SECOND" />
             </span>
           </label>
-          <p>個人の場合は「個人」とご記入ください。</p>
+          <p class="guide">個人の場合は「個人」とご記入ください。</p>
         </div>
-  
-        <div>
-          <label> お名前
-            <span class="your-name">
-              <input type="text" name="your-name" value="" size="40" class="your-name" aria-required="true" aria-invalid="false" placeholder="山田　太郎">
-            </span>
-          </label>
-        </div>
-  
-        <div>
-          <label> お名前（カナ）
-            <span class="your-name-kana">
-              <input type="text" name="your-name-kana" value="" size="40" class="your-name-kana" aria-required="true" aria-invalid="false" placeholder="ヤマダ　タロウ">
+
+        <div class="group-your-name">
+          <span class="item asterisk">お名前</span>
+          <label class="input-background">
+            <span class="item-your-name">
+              <input type="text" name="item-your-name" value="" size="40" class="your-name input-area" aria-required="true" aria-invalid="false" placeholder="例)  山田  太郎" />
             </span>
           </label>
         </div>
-  
-        <div>
-          <label> 電話番号
-            <span class="tel">
-              <input type="tel" name="tel" value="" size="40" class="tel" aria-required="true" aria-invalid="false" placeholder="例）000-0000-0000">
+
+        <div class="group-your-name-kana">
+          <span class="item asterisk">お名前（カナ）</span>
+          <label class="input-background">
+            <span class="item-your-name-kana">
+              <input type="text" name="item-your-name-kana" value="" size="40" class="your-name-kana input-area" aria-required="true" aria-invalid="false" placeholder="例)  ヤマダ  タロウ" />
             </span>
           </label>
         </div>
-  
-        <div>
-          <label> メールアドレス
-            <span class="email-address">
-              <input type="email" name="email-address" value="" size="40" class="email-address" aria-required="true" aria-invalid="false" placeholder="例)　xxxxx@xxxxx.co.jp">
+
+        <div class="group-tel">
+          <span class="item asterisk">電話番号</span>
+          <label class="input-background">
+            <span class="item-tel">
+              <input type="tel" name="item-tel" value="" size="40" class="tel input-area" aria-required="true" aria-invalid="false" placeholder="例)  000-0000-0000" />
             </span>
           </label>
         </div>
-  
-        <div>
-          <label> メールアドレス（確認）
-            <span class="email-address-confirm">
-              <input type="email" name="email-address-confirm" value="" size="40" class="email-address-confirm" aria-required="true" aria-invalid="false" placeholder="例)　xxxxx@xxxxx.co.jp">
+
+        <div class="group-email-address">
+          <span class="item asterisk">メールアドレス</span>
+          <label class="input-background">
+            <span class="item-email-address">
+              <input type="email" name="item-email-address" value="" size="40" class="email-address input-area" aria-required="true" aria-invalid="false" placeholder="例)  xxxxx@xxxxx.co.jp" />
             </span>
           </label>
         </div>
-  
-        <div>
-          <label> お問い合わせ内容
-            <span class="contact-textarea">
-              <textarea name="contact-textarea" cols="40" rows="10" class="contact-textarea" aria-required="true" aria-invalid="false" placeholder="お問い合わせ内容を記入してください。"></textarea>
+
+        <div class="group-email-address-confirm"> 
+          <span class="item asterisk">メールアドレス（確認）</span>
+          <label class="input-background">
+            <span class="item-email-address-confirm">
+              <input type="email" name="item-email-address-confirm" value="" size="40" class="email-address-confirm input-area" aria-required="true" aria-invalid="false" placeholder="例)  xxxxx@xxxxx.co.jp" />
             </span>
           </label>
         </div>
-  
-        <div>
-          <span class="agree-privacy">
-            <span class="">
+
+        <div class="group-contact-textarea"> 
+          <span class="item asterisk">お問い合わせ内容</span>
+          <label class="input-background">
+            <span class="item-contact-textarea">
+              <textarea name="item-contact-textarea" cols="40" rows="10" class="contact-textarea input-area" aria-required="true" aria-invalid="false" placeholder="お問い合わせ内容を記入してください。"></textarea>
+            </span>
+          </label>
+        </div>
+
+        <label class="group-agree-privacy" for="agree-privacy">
+          <span class="item-agree-privacy">
+            <span class="wpcf7-form-control wpcf7-acceptance">
               <span class="wpcf7-list-item">
                 <label>
-                  <input type="checkbox" name="agree-privacy" value="1" aria-invalid="false" class="agree-privacy">
-                  <span class="wpcf7-list-item-label">プライバシーポリシーに同意する</span>
+                  <input type="checkbox" name="item-agree-privacy" value="1" aria-invalid="false" class="agree-privacy" id="agree-privacy" />
+                  <span class="wpcf7-list-item-label">プライバシーポリシーに同意する
+                    <span class="asterisk"></span>
+                    <span class="under-bar">Privacy Policy</span>
+                  </span>
                 </label>
               </span>
             </span>
           </span>
-        </div>
-  
-        <div>
-          <input type="submit" value="Confirm" class="confirm">
-        </div>
-        <div>
-          <input type="button" value="Back" class="back">
-        </div>
-        <div>
-          <input type="submit" value="Send" class="send">
-        </div>
+        </label>
+
+        <input type="submit" value="Confirm" class="confirm" />
+
+        <input type="button" value="Back" class="back" />
+
+        <input type="submit" value="Send" class="send" />
+        <div class="wpcf7-response-output" aria-hidden="true"></div>
       </form>
+
+      <aside class="side-progress">
+        <div class="progress-now-text">入力</div>
+        <div class="progress-line progress-now-line"></div>
+        <div class="">確認</div>
+        <div class="progress-line"></div>
+        <div class="">完了</div>
+      </aside>
+
+      <div class="left-line vertical-line"></div>
+      <div class="right-line vertical-line"></div>
+      <div class="bottom-line horizon-line"></div>
     </div>
     <!-- フッター部分 -->
+    <div class="container-bottom"></div>
   </body>
 </html>
