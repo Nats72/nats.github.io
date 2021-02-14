@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500&display=swap');
+
+.body{
+  position: relative;
+  /* cursor: none;  /* もともとあるカーソルは見えなくなるようにする */
+  margin:0px;
+  font-family: 'Montserrat', sans-serif;
+}
+.cursor{
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);  /* 上下、左右-50%ずつ移動 */
+  pointer-events: none; /* ポインターイベントを無効化(クリックやホバー時の変更) */
+  transition: all 0.2s ease;
+  background-color: yellow;
+  text-align: center;
+  line-height: 8rem;
+  transition-property: background,transform,width,height; /* 指定スタイルのみ変化させる */
+  transform-origin: 100% 100%;
+  z-index: 11;
+}
+
+/* HEADER */
+.header{
+  position: fixed;
+  display: grid;
+  margin: 50px 0;
+  width: 100%;
+  grid-template-columns: repeat(12,1fr);
+  opacity: 0.9;
+  z-index: 10;
+}
+.header_logo{
+  grid-column: 1/2;
+  height: 48px;
+  margin-left: 80px;
+}
+.header_nav{
+  display: flex;
+  grid-column: 2/-1;
+  margin-right: 80px;
+  justify-content: space-between;  /* 内包コンテンツの幅固定 */
+  align-self: center;
+  justify-self: end;  /* 水平方向の右寄せ */
+  font-size: 1rem;
+  margin: 0 80px 0 0;
+}
+.header_nav li{
+  list-style: none;  /* list要素の点を消す */
+  padding: 1rem;
+}
+.menu{
+  color: white;
+  text-decoration: none;
+  cursor: none;
+  z-index: 10;
+}
+
+/* PAGE(背景：青) */
+.NotFound_container_top{
+  display: grid;
+  grid-auto-flow: row dense;  /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
+  grid-template-columns: calc(133/1600 * 100%) calc(247/1600 * 100%) calc(1220/1600 * 100%);
+  grid-template-rows: 736px 312px;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  font-size: 16px;
+  background-color:midnightblue;
+  z-index: 1;
+}
+.NotFound_text_side{
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: fit-content;
+  writing-mode: vertical-rl;
+  color: white;
+  margin-top: 273px;
+  margin-left: 83px;
+  font-weight: 600;
+}
+.NotFound_text_line{
+  display: inline-block;
+  vertical-align: middle;
+  opacity: 0.4;
+  padding:20px 5px 20px 0px;
+  text-decoration: line-through;
+}
+.NotFound_text_top_sidecontent{
+  display: inline-block;
+  opacity: 0.7;
+  transform: rotate(180deg);
+}
+.NotFound_text_sidecontent{
+  display: inline-block;
+  transform: rotate(180deg);
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 500;
+}
+.NotFound_top_img_background{
+  grid-column: 3/-1;
+  grid-row: 1/2;
+  opacity: 0.3;
+  background-color: #191970;
+  z-index: 3;
+}
+.NotFound_top_img{
+  grid-column: 3/-1;
+  grid-row: 1/2;
+  width: 100%;
+  z-index: 2;
+}
+.NotFound_top_text{
+  font-size: 400.5px;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 100;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.25;
+  letter-spacing: -12.04px;
+  color: white;
+  margin-top: 700px;
+  margin-left: 200px;
+  text-align: right;
+  z-index: 1;
+}
+
+/* PAGE(背景：白) */
+.NotFound_container_middle{
+  display: grid;
+  grid-auto-flow: row dense;  /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
+  grid-template-columns: calc(215/1600 * 100%);
+  grid-template-rows: 170px 90px 140px 200px;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  font-size: 16px;
+  background-color:white;
+}
+.NotFound_middle_main{
+  grid-column: 2/-1;
+  grid-row: 2/3;
+  width: 460px;
+  height: 30px;
+  font-family: YuGothic;
+  font-size: 30px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.73;
+  letter-spacing: normal;
+  text-align: justify;
+  color: #272d3d;
+}
+.NotFound_middle_text{
+  grid-column: 2/-1;
+  grid-row: 3/4;
+  width: 800px;
+  height: 55px;
+  font-family: YuGothic;
+  font-size: 18px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.11;
+  letter-spacing: normal;
+  text-align: justify;
+  color: #272d3d;
+}
+.NotFonund_middle_text_top{
+  grid-column: 2/-1;
+  grid-row: 4/5;
+  width: 130px;
+  height: 15px;
+  font-family: YuGothic;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 7.14;
+  letter-spacing: normal;
+  text-align: left;
+  color: #272d3d;
+}

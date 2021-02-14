@@ -15,7 +15,7 @@ body {
   display: grid;
   grid-auto-flow: row dense; /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
   grid-template-columns: 130px 250px 300px 845px 75px;
-  grid-template-rows: 620px 120px 160px 150px;
+  grid-template-rows: 620px 116px 160px 150px; /* 画像に合わせるため 116px にする */
   grid-column-gap: 0;
   grid-row-gap: 0;
   background-color: #191970;
@@ -164,20 +164,26 @@ body {
   line-height: 280px; /* グリッドの高さと同じにする */
   text-align: left;
   /* overflow: hidden; */
-  animation: horizonScroll 15s;
+  /* white-space: nowrap; */
+  /* text-overflow: clip; */
+  /* animation: horizonScroll 15s; */
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 
 .text-transparent {
   display: block;
-  color: rgba(255, 255, 255, 0.3);
+  /* color: rgba(255, 255, 255, 0.3); */
   z-index: 4;
+  /* 開発中は文字の色を簡単に変えるために rgba を使わない */
+  opacity: 0.3;
 }
 
 .text-opacity {
-  color: rgba(255, 255, 255, 1);
+  /* color: rgba(255, 255, 255, 1); */
   z-index: 1;
+  /* 開発中は文字の色を簡単に変えるために rgba を使わない */
+  opacity: 1;
 }
 
 @keyframes horizonScroll {
@@ -193,7 +199,7 @@ body {
 .container-main {
   display: grid;
   grid-auto-flow: row dense; /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
-  grid-template-columns: 130px 245px 250px 600px 300px 75px; /* 630px 270px にすれば guide は綺麗に収まる ただ入力のグリッドのピクセルも直す必要がある */
+  grid-template-columns: 130px 245px 250px 55px 545px 300px 75px;
   grid-template-rows: 140px 40px 55px 1395px 120px 110px 210px;
   grid-column-gap: 0;
   grid-row-gap: 0;
@@ -211,14 +217,21 @@ body {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;
-  grid-row-end: 7;
+  grid-row-end: 8;
+}
+
+.container-main .center-line {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 8;
 }
 
 .container-main .right-line {
-  grid-column-start: 5;
-  grid-column-end: 6;
+  grid-column-start: 6;
+  grid-column-end: 7;
   grid-row-start: 1;
-  grid-row-end: 7;
+  grid-row-end: 8;
 }
 
 .horizon-line {
@@ -266,7 +279,7 @@ body {
 /* 入力に対する案内 */
 .contact-guide {
   grid-column-start: 4;
-  grid-column-end: 5;
+  grid-column-end: 6;
   grid-row-start: 2;
   grid-row-end: 3;
   font-size: 14px;
@@ -282,7 +295,7 @@ body {
 /* 入力欄たち */
 .wpcf7-form {
   grid-column-start: 3;
-  grid-column-end: 5;
+  grid-column-end: 6;
   grid-row-start: 4;
   grid-row-end: 6;
   display: grid;
@@ -429,6 +442,7 @@ body {
 /* プライバシーポリシー */
 .group-agree-privacy {
   border: solid 1px #dadadf;
+  background-color: #fff;
   font-weight: bold;
   color: #191970;
   position: relative; /* クリック範囲を広くするため外 */
@@ -450,6 +464,15 @@ body {
   margin: 30px 97px auto 97px; /* (220-26)/2 */
   height: 26px;
   width: 26px;
+  background-color: #dadadf;
+}
+
+.group-agree-privacy a:link,
+.group-agree-privacy a:visited,
+.group-agree-privacy a:hover,
+.group-agree-privacy a:active 
+{
+  color: #191970;
 }
 
 .under-bar {

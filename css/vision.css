@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500&display=swap');
 
 body{
     position: relative;
@@ -118,7 +118,13 @@ body{
 }
 .main_title2_border{
     height: 130px;
-    width: 100%;
+    width: 610px;
+    margin: 20px 0px 0px 0px;
+    border-bottom: 1px solid #ffffff;
+}
+.main_title2_border2{
+    height: 130px;
+    width: 695px;
     margin: 20px 0px 0px 0px;
     border-bottom: 1px solid #ffffff;
 }
@@ -284,13 +290,13 @@ body{
     justify-content: flex-start;
 }
 .ceo{
-    width: 180px;
+    width: 90px;
     height: 20px;
-    margin: 20px 15px 0px 75px;
+    margin: 20px 30px 0px 105px;
     color: rgba(156, 156, 168, 0.5);
 }
 .ceo_name{
-    width: 180px;
+    width: 80px;
     height: 20px;
     margin: 20px 0px 0px 0px;
     color: #272d3d;
@@ -306,6 +312,8 @@ body{
     grid-row-gap: 10px;
     font-size: 16px;
   }
+
+
 .vision_bottom_text_service{
     display: inline-block; 
     grid-column: 2/2;
@@ -356,19 +364,19 @@ body{
     color: #191970;
   }
 
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
   
   .vision_next{
     grid-column: 3/4;
     grid-row: 1/2;
-    width: 255px;
+    width: 270px;
     height: 120px;
     margin-top: 380px;
     margin-left:0;
     padding: 0;
     font-family: Montserrat;
     font-size: 116px;
-    font-weight: 900;
+    font-weight: 400;
     text-align: left;
     background-image: url("../images/A_PC/02_VISION/1x/b-vision_next_image.jpg");
     -webkit-background-clip: text;
@@ -379,7 +387,7 @@ body{
     grid-row: -2/-1;
     width: 1467px;
     height: 500px;
-    opacity: 0.7;
     background-color: #191970;
-    z-index: 5;
+    opacity: 0.7;
   }
+  

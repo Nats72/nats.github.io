@@ -62,7 +62,7 @@ body{
   display: grid;
   grid-auto-flow: row dense;  /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
   grid-template-columns: calc(133/1600 * 100%) calc(246/1600 * 100%) calc(72/1600 * 100%) calc(948/1600 * 100%) calc(200/1600 * 100%);
-  grid-template-rows: 736px 164px 1250px 391px;
+  grid-template-rows: 736px 164px 1800px 237px;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
   font-size: 16px;
@@ -156,7 +156,7 @@ body{
 .news_block_main{
   grid-column: 4/6;
   grid-row: 3/4;
-  height: 1200px;
+  height: 1400px;
   width: 948px;
   opacity: 0.5;
   text-align: left;
@@ -170,6 +170,7 @@ body{
   font-style: normal;
   line-height: 1.71;
   letter-spacing: normal;
+  margin-top: 80px;
   color: rgba(243, 244, 245, 0.5);
 }
 .news_date:hover{
