@@ -62,7 +62,7 @@ body{
   display: grid;
   grid-auto-flow: row dense;  /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
   grid-template-columns: calc(133/1600 * 100%) calc(247/1600 * 100%) calc(1220/1600 * 100%);
-  grid-template-rows: calc(736/1048 * 100%)px calc(312/1048 * 100%);
+  grid-template-rows: 736px 312px;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
   font-size: 16px;

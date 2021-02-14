@@ -112,7 +112,7 @@ body {
 
 .side .top{
   display: inline-block;
-  opacity: 0.5;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .side .border-style {
@@ -164,17 +164,29 @@ body {
   line-height: 280px; /* グリッドの高さと同じにする */
   text-align: left;
   /* overflow: hidden; */
+  animation: horizonScroll 15s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 .text-transparent {
   display: block;
-  opacity: 0.3;
+  color: rgba(255, 255, 255, 0.3);
   z-index: 4;
 }
 
 .text-opacity {
-  opacity: 1;
+  color: rgba(255, 255, 255, 1);
   z-index: 1;
+}
+
+@keyframes horizonScroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-160%);
+  }
 }
 
 /* お問い合わせのメイン部分 */
@@ -321,8 +333,8 @@ body {
 
 /* プレースホルダ */
 ::placeholder {
-  opacity: 0.5;
-  color: #272d3d;
+  /* #272d3d の RGB プラス 透明度 バージョン */
+  color: rgba(39, 45, 61, 0.5);
 }
 
 /* お問い合わせの種類 */
@@ -346,10 +358,9 @@ body {
   cursor: pointer; /* クリックできる部分はマウスを変化させる */
 }
 
-/* 読み込み時のプレースホルダを薄くできないせめてもの頑張り */
-.group-contact-kind option:first-child {
+/* select だけ上から透明度マスクをかける 1回クリックしたら jQuery でクラスを取り除く */
+.item-contact-kind {
   opacity: 0.5;
-  color: #272d3d;
 }
 
 /* 御社名/個人 */
@@ -365,8 +376,7 @@ body {
   grid-row-start: 2;
   grid-row-end: 3;
   margin: auto auto 0 30px;
-  opacity: 0.5;
-  color: #272d3d;
+  color: rgba(39, 45, 61, 0.5);
   font-size: 14px;
 }
 

@@ -10,19 +10,19 @@
   <div class="cursor"></div>
   <div class="container">
     <header class="header">
-      <a href=""><img class="header_logo" src="images/C_logo/SVG/c-head logo.svg" alt="logo"></a>
+      <a class="header_logo" href="index.html"><img class="header_logo_img" src="images/C_logo/SVG/c-head logo.svg" alt="logo"></a>
       <ul class="header_nav">
         <li><a class="menu" id="menu_vision" href="vision.html">Vision</a></li>
         <li><a class="menu" id="menu_service" href="service.html">Service<sup>3</sup></a></li>
         <li><a class="menu" id="menu_company" href="company.html">Company</a></li>
-        <li><a class="menu" id="menu_event" href="event">Event</a></li>
-        <li><a class="menu" id="menu_contact" href="contact">Contact</a></li>
+        <li><a class="menu" id="menu_news" href="news.html">News</a></li>
+        <li><a class="menu" id="menu_contact" href="contact.html">Contact</a></li>
       </ul>
     </header>
     <div class="header_area"></div>
 
     <div class="main">
-      <div class="main_title">
+      <div class="main-title">
         <p class="main-word-top">We're Second Inc.</p>
         <p class="main-word-center">I want to be<br>Number one</p>
         <p class="main-word-bottom">あなたのやりたいを叶える会社です。</p>
@@ -30,7 +30,7 @@
       <a id="main-link" class="main_visual wrap_animation learn_more" href="#">
         <img id="main-img" src="images/A_PC/01_TOP/2x/b-kv_image@2x.jpg" alt="メイン画像">
       </a>
-      <div class="main_pager">
+      <div class="main-pager">
         <p id="page-count"></p>
         <progress id="page-progress" class="page-progress" value="0" max="1000"></progress>
         <p id="page-count-total"></p>
@@ -42,21 +42,19 @@
       <div class="main_prevarea" id="prev"></div>
       <div class="main_nextarea" id="next"></div>
       <div class="main-progress"><progress id="page-progress-wide" class="page-progress-wide" value="0" max="1000"></progress></div>
+      <div class="news">
+        <p class="news_title">Latest News</p>
+        <div class="news_posts">
+          <p><a href="#">May15,2020-弊社の取り組みが紹介されました。</a></p>
+          <p><a href="#">May15,2020-弊社の取り組みが紹介されました。</a></p>
+        </div>
+      </div>
+      <div class="scroll_down">
+        <p>Scroll</p><p class="down">↓</p>
+      </div>  
     </div>
     <img class="background_img" src="images/A_PC/01_TOP/2x/b-kv_bg_image@2x.jpg" alt="背景画像">
 
-
-    <div class="news">
-      <p class="news_title">Latest News</p>
-      <div class="news_posts">
-        <p><a href="#">May15,2020-弊社の取り組みが紹介されました。</a></p>
-        <p><a href="#">May15,2020-弊社の取り組みが紹介されました。</a></p>
-      </div>
-    </div>
-
-    <div class="scroll_down">
-      <p>Scroll</p><p class="down">↓</p>
-    </div>
     
     <div class="vision">
       <div class="vision_side">
@@ -68,17 +66,16 @@
         <h4>あなたのやりたいを叶える会社です。会社理念・ビジョンの文章から抜粋します。
           あなたのやりたいを叶える会社です。会社理念・ビジョンの文章から抜粋します。
           あなたのやりたいを叶える会社です。会社理念・ビジョンの文章から抜粋します。
-          あなたのやりたいを叶える会社です。会社理念・ビジョンの文章から抜粋します。
         </h4>
         <a class="vision_learnmore" href="#">Learn more +</a>
       </div>
     </div>
     <div class="vision_background">
       <ul>
-        <li>CompanyVision</li>
+        <li>Company Vision</li>
       </ul>
       <ul>
-        <li>CompanyVision</li>
+        <li>Company Vision</li>
       </ul>
     </div>
   </div>
@@ -109,6 +106,21 @@
         <p class="activities_date">May15,2020</p>
         <a class="activities_content" href="#" >活動記録の文章が入ります。活動記録の文章が入ります。活動記録の文章が入ります。</a>
       </div>
+      <div class="activities_frame">
+        <a class="learn_more" href="#"><img src="images/A_PC/01_TOP/2x/b-top_activities_image_03@2x.jpg" alt=""></a>
+        <p class="activities_date">May15,2020</p>
+        <a class="activities_content" href="#" >活動記録の文章が入ります。活動記録の文章が入ります。活動記録の文章が入ります。</a>
+      </div>
+      <div class="activities_frame">
+        <a class="learn_more" href="#"><img src="images/A_PC/01_TOP/2x/b-top_activities_image_01@2x.jpg" alt=""></a>
+        <p class="activities_date">May15,2020</p>
+        <a class="activities_content" href="#" >活動記録の文章が入ります。活動記録の文章が入ります。活動記録の文章が入ります。</a>
+      </div>
+      <div class="activities_frame">
+        <a class="learn_more" href="#"><img src="images/A_PC/01_TOP/2x/b-top_activities_image_03@2x.jpg" alt=""></a>
+        <p class="activities_date">May15,2020</p>
+        <a class="activities_content" href="#" >活動記録の文章が入ります。活動記録の文章が入ります。活動記録の文章が入ります。</a>
+      </div>
     </div>
     <div class="activities_option">
       <p class="activities_left">←</p>
@@ -118,12 +130,35 @@
     <div class="project">
       <h1>INTERNATIONAL<br>SUPPORT PROJECT</h1>
       <a class="white_learnmore project_learnmore" href="#">Learn more +</a>
+      <p class="project_numbers">01</p>
+      <div class="project_numbers_image"><img class="project_image" src="images/A_PC/01_TOP/2x/b-top_service_image_01@2x.jpg" alt=""></div>
       <div class="project_image"><img class="project_image" src="images/A_PC/01_TOP/2x/b-top_service_image_01@2x.jpg" alt=""></div>
     </div>
   </div>
 
   <div class="footer">
-
+    <div class="footer_company">
+      <img class="footer_logo_img" src="images/C_logo/SVG/c-head logo.svg" alt="logo">
+      <p class="footer_company_name">SECOND Company Limited.</p>
+      <p class="footer_postcode">446-0002</p>
+      <p class="footer_address">名古屋市中区丸の内2-14-4エグゼ丸の内2F202</p>
+      <a class="footer_contact" href="contact.html">会社や採用に関するお問い合わせはこちらから +</a>
+    </div>
+    <div class="footer_copyright">
+      <p>SECOND INC. All Rights Reserved.</p>
+      <a href="privacy_policy.html">Privacy Policy</a>
+    </div>
+    <div class="footer_sitemap">
+      <a href="vision.html">Vision</a>
+      <a href="vision.html">会社理念/代表挨拶</a>
+      <a href="service.html">Service</a>
+      <a href="service.html">国際支援事業/通信事業/イベント事業</a>
+      <a href="company.html">Company</a>
+      <a href="company.html">会社概要</a>
+      <a href="news.html">News</a>
+      <a href="news.html">イベント/活動紹介</a>
+      <a href="contact.html">Contact</a>
+    </div>
   </div>
 
   <script>
@@ -234,7 +269,7 @@
     function changeHeader(){
       let container_white = document.getElementsByClassName('container_white');
       let menu = document.getElementsByClassName('menu');
-      let header_logo = document.getElementsByClassName('header_logo');
+      let header_logo = document.getElementsByClassName('header_logo_img');
       let header = document.getElementsByClassName('header');
       let elementY = window.pageYOffset + container_white[0].getBoundingClientRect().top;
       if(window.pageYOffset > elementY) {
@@ -263,10 +298,9 @@
     let main_img = document.getElementById('main-img');
     let slide_menu = [
       {"category":"Vision","imgPath":"images/A_PC/01_TOP/2x/b-kv_image@2x.jpg"},
-      {"category":"Service","imgPath":"images/A_PC/01_TOP/2x/b-top_activities_image_02@2x.jpg"},
+      {"category":"Service","imgPath":"images/A_PC/01_TOP/2x/b-kv_image@2x.jpg"},
       {"category":"Company","imgPath":"images/A_PC/01_TOP/2x/b-kv_image@2x.jpg"},
-      {"category":"Event","imgPath":"images/A_PC/01_TOP/2x/b-top_activities_image_02@2x.jpg"},
-      {"category":"Contact","imgPath":"images/A_PC/01_TOP/2x/b-kv_image@2x.jpg"}
+      {"category":"Event","imgPath":"images/A_PC/01_TOP/2x/b-kv_image@2x.jpg"},
     ]
 
     let page = 1;
@@ -323,6 +357,14 @@
       }
     }
     prog();
+
+    //Recent Activitiesの矢印クリック時の動作
+    document.getElementsByClassName('activities_left')[0].addEventListener('click',function leftClick(){
+      document.getElementsByClassName('activities_contents')[0].scrollBy(-400,0);
+    },false);
+    document.getElementsByClassName('activities_right')[0].addEventListener('click',function rightClick(){
+      document.getElementsByClassName('activities_contents')[0].scrollBy(400,0);
+    },false);
   </script>
 </body>
 </html>
