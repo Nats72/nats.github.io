@@ -162,6 +162,12 @@ body{
   text-align: left;
   margin-top: 149px;
 }
+.news_content_block{
+  margin-top: 80px;
+  position: relative;
+  height: 94px;
+  width: 100%;
+}
 .news_date{
   font-family: Montserrat;
   font-size: 14px;
@@ -170,11 +176,11 @@ body{
   font-style: normal;
   line-height: 1.71;
   letter-spacing: normal;
-  margin-top: 80px;
   color: rgba(243, 244, 245, 0.5);
 }
 .news_date:hover{
   text-decoration: underline;
+  color: #f3f4f5;
 }
 .news_content{
   font-family: YuGothic;
@@ -188,6 +194,17 @@ body{
 }
 .news_content:hover{
   text-decoration: underline;
+  color: #f3f4f5;
+}
+.news_content_block img{
+  display: none;
+  position: absolute;
+  opacity: 0.6;
+  top:-55px;
+  left: 136px;
+}
+.news_content_block:hover img{
+  display: block;
 }
 .news_pagination{
   grid-column: -3/-2;
