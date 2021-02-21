@@ -347,6 +347,94 @@ body{
 .service_bottom_img{
   grid-column: 2/3;
   grid-row: -2/-1;
+  height: 100%;
   width: 100%;
   background-color: #191970;
+}
+
+/* FOOTER */
+.footer{
+  display: grid;
+  grid-template-columns: calc(135/1600 * 100%) calc(635/1600 * 100%) calc(470/1600 * 100%) calc(360/1600 * 100%);
+  grid-template-rows: 290px 490px 120px;
+  background-color: #26263b;
+}
+.footer p{
+  color: #ffffff;
+}
+.footer_company{
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.footer_logo_img{
+  display: inline;
+  width: 90px;
+  vertical-align: middle;
+}
+.footer_company_name{
+  display: inline;
+  font-family: Montserrat;
+  margin-left: 25px;
+  font-size: 16px;
+  line-height: 3.75;
+  vertical-align: middle;
+}
+.footer_postcode{
+  margin: 60px 0 0 0;
+  font-family: Kozuka Gothic Pr6N R;
+  font-size: 14px;
+  line-height: 1.71;
+}
+.footer_address{
+  margin: 0 0 50px 0;
+  font-family: Kozuka Gothic Pr6N R;
+  font-size: 14px;
+  line-height: 1.71;
+  font-family: '游ゴシック体', yuGothic, sans-serif;
+}
+.footer_contact{
+  margin: 0 0 0 15px;
+  font-family: '游ゴシック体', yuGothic, sans-serif;
+  color: #f3f4f5;
+}
+.footer_copyright{
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+.footer_copyright_link{
+  display: inline-block;
+  margin-left: 39px;
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 0.5;
+}
+.footer_copyright_sentence{
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 0.5;
+}
+.footer_sitemap{
+  grid-column: 3/4;
+  grid-row: 2/3;
+  text-align: left;
+}
+.footer_sitemap table{
+  width:100%;
+}
+.footer_sitemap tr{
+  height:62px;
+}
+.footer_sitemap th{
+  border: 0px none;
+  width:40%;
+}
+.footer_sitemap_link_th{
+  color: #ffffff;
+}
+.footer_sitemap td{
+  border: 0px none;
+  width:60%;
+}
+.footer_sitemap_link_td{
+  opacity: 0.5;
+  color: rgba(255, 255, 255, 0.5);
 }
