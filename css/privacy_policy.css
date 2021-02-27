@@ -61,7 +61,7 @@ body{
 .container_top{
   display: grid;
   grid-auto-flow: row dense;  /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
-  grid-template-columns: calc(133/1600 * 100%) calc(246/1600 * 100%) calc(1220/1600 * 100%);
+  grid-template-columns: calc(133/1600 * 100%) calc(246/1600 * 100%) calc(305/1600 * 100%) calc(838/1600 * 100%) calc(75/1600 * 100%);
   grid-template-rows: 600px 136px 240px 150px;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
@@ -71,7 +71,7 @@ body{
 }
 .privacy_text_side{
   grid-column: 1/2;
-  grid-row: 1/2;
+  grid-row: 1/5;
   width: fit-content;
   writing-mode: vertical-rl;
   color: white;
@@ -96,14 +96,14 @@ body{
   transform: rotate(180deg);
 }
 .privacy_top_img_background{
-  grid-column: 3/-1;
+  grid-column: 3/6;
   grid-row: 1/3;
   opacity: 0.3;
   background-color: #191970;
   z-index: 3;
 }
 .privacy_top_img{
-  grid-column: 3/4;
+  grid-column: 3/6;
   grid-row: 1/3;
   width: 100%;
   width: 100%;
@@ -127,6 +127,26 @@ body{
   margin-top: 100px;
   margin-right: 60px;
   z-index: 1;
+}
+
+/* トップ部分にある縦ライン */
+.privacy_center-line {
+  grid-column: 2/4;
+  grid-row: 1/5;
+  border-right: solid 1px;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+.privacy_left-line {
+  grid-column: 1/2;
+  grid-row: 1/5;
+  border-right: solid 1px;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+.privacy_right-line {
+  grid-column: 4/5;
+  grid-row: 3/5;
+  border-right: solid 1px;
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 /* MAIN PAGE(背景：白) */

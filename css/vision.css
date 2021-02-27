@@ -130,19 +130,32 @@ body{
 }
 .main_background_text{
     grid-column: 1/-1;
-    grid-row: 4/6;
-    width: 1600px;
-    height: 400px;
-    margin: 0;
-    padding: 0;
-    opacity: 1;
+    grid-row: 4/7;
+    margin-top: 80px;
+    color: rgba(255, 255, 255, 0.05);
+    mix-blend-mode: overlay;
     font-family: Montserrat;
-    font-size: 350px;
+    font-size: 400px;
     font-weight: 100;
-    font-stretch: normal;
-    font-style: normal;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.01); /**/
+    line-height: 0.25;
+    letter-spacing: -32px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    z-index: 2;
+}
+@keyframes hscroll {
+	0% { transform:translateX(4px); }
+	100% { transform:translateX(-100%); }
+}
+.main_background_text ul {
+	display:inline-block;
+	margin:100px 0;
+	padding:0;
+	animation:hscroll 60s linear infinite;
+}
+.main_background_text li {
+	display:inline-block;
 }
 
 .main_catchcopy{
@@ -225,7 +238,7 @@ body{
     grid-column: -2/-1;
     grid-row: 1/2;
     margin-top: -130px;
-    z-index: 2;
+    z-index: 3;
 }
 .middle_catchcopy{
     grid-column: 3/7;
@@ -245,16 +258,31 @@ body{
 .middle_background_text{
     grid-column: 1/-1;
     grid-row: 3/4;
-    width: 1600px;
-    height: 400px;
-    margin-top: 50px;
-    padding: 0;
-    opacity: 0.05;
+    margin-top: 70px;
+    color: rgba(39, 45, 61, 0.05);
+    mix-blend-mode: normal;
     font-family: Montserrat;
-    font-size: 350px;
+    font-size: 400px;
     font-weight: 100;
-    text-align: left;
-    color:gray;
+    line-height: 0.25;
+    letter-spacing: -32px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    z-index: 2;
+}
+@keyframes hscroll {
+    0% { transform:translateX(4px); }
+    100% { transform:translateX(-100%); }
+}
+.middle_background_text ul{
+    display:inline-block;
+    margin:100px 0;
+    padding:0;
+    animation:hscroll 100s linear infinite;
+}
+.middle_background_text li {
+    display:inline-block;
 }
 .middle_text{
     grid-column: 3/7;
@@ -375,7 +403,7 @@ body{
     width: 270px;
     height: 120px;
     margin-top: 380px;
-    margin-left:0px;
+    margin-left:-80px;
     padding: 0;
     font-family: Montserrat;
     font-size: 116px;
@@ -386,7 +414,7 @@ body{
     color: transparent;
   }
 .vision_bottom_img_background{
-    grid-column: 3/-1;
+    grid-column: 2/-1;
     grid-row: -2/-1;
     width: 1467px;
     height: 500px;
@@ -395,7 +423,7 @@ body{
     z-index: 3;
 }
 .vision_bottom_img{
-    grid-column: 3/-1;
+    grid-column: 2/-1;
     grid-row: -2/-1;
     width: 1467px;
     height: 500px;

@@ -61,7 +61,7 @@ body{
 .container_top{
   display: grid;
   grid-auto-flow: row dense;  /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
-  grid-template-columns: calc(133/1600 * 100%) calc(246/1600 * 100%) calc(1220/1600 * 100%);
+  grid-template-columns: calc(133/1600 * 100%) calc(246/1600 * 100%) calc(305/1600 * 100%) calc(838/1600 * 100%) calc(75/1600 * 100%);
   grid-template-rows: 736px 164px 146px;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
@@ -105,13 +105,17 @@ body{
 .news_detail_top_img{
   grid-column: 3/-1;
   grid-row: 1/2;
-  width: 100%;
+  height: 100%;
   width: 100%;
   z-index: 2;
 }
-.news_detail_top_text{
+.news_detail_top_text_range{
   grid-column: 3/-1;
   grid-row: 1/3;
+  width: 100%;
+  z-index: 1;
+}
+.news_detail_top_text{
   font-size: 370px;
   font-family: Montserrat;
   font-weight: 100;
@@ -124,6 +128,27 @@ body{
   margin-right: 50px;
   text-align: right;
   z-index: 1;
+}
+
+/* トップ部分にある縦ライン */
+.news_detail_center-line {
+  grid-column: 2/4;
+  grid-row: 1/5;
+  border-right: solid 1px;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+.news_detail_left-line {
+  grid-column: 1/2;
+  grid-row: 1/5;
+  border-right: solid 1px;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+.news_detail_right-line {
+  grid-column: 4/5;
+  grid-row: 2/5;
+  border-right: solid 1px;
+  border-color: rgba(255, 255, 255, 0.12);
+  z-index: 5;
 }
 
 /* MAIN PAGE(背景：白) */
@@ -147,7 +172,7 @@ body{
 .news_detail_text_day{
   font-family: Montserrat;
   font-size: 14px;
-  font-weight: normal;
+  font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   letter-spacing: normal;
