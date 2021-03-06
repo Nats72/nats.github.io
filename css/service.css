@@ -61,7 +61,7 @@ body{
 .container_top{
   display: grid;
   grid-auto-flow: row dense;  /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
-  grid-template-columns: calc(133/1600 * 100%) calc(246/1600 * 100%) calc(305/1600 * 100%) calc(838/1600 * 100%) calc(75/1600 * 100%);
+  grid-template-columns: calc(133/1600 * 100%) calc(246/1600 * 100%) calc(305/1600 * 100%) calc(841/1600 * 100%) calc(75/1600 * 100%);
   grid-template-rows: 736px 312px;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
@@ -133,18 +133,13 @@ body{
 .service_center-line {
   grid-column: 2/4;
   grid-row: 1/5;
-  border-right: solid 1px;
-  border-color: rgba(255, 255, 255, 0.12);
-}
-.service_left-line {
-  grid-column: 1/2;
-  grid-row: 1/5;
-  border-right: solid 1px;
+  border-left: solid 1px;
   border-color: rgba(255, 255, 255, 0.12);
 }
 .service_right-line {
   grid-column: 4/5;
   grid-row: 2/5;
+  border-left: solid 1px;
   border-right: solid 1px;
   border-color: rgba(255, 255, 255, 0.12);
 }
@@ -411,19 +406,21 @@ body{
   font-size: 16px;
   line-height: 3.75;
   vertical-align: middle;
+  font-weight: bold;
 }
 .footer_postcode{
   margin: 60px 0 0 0;
-  font-family: Kozuka Gothic Pr6N R;
+  font-family: '游ゴシック体', yuGothic, sans-serif;
   font-size: 14px;
   line-height: 1.71;
+  opacity: 0.5;
 }
 .footer_address{
   margin: 0 0 50px 0;
-  font-family: Kozuka Gothic Pr6N R;
   font-size: 14px;
   line-height: 1.71;
   font-family: '游ゴシック体', yuGothic, sans-serif;
+  opacity: 0.5;
 }
 .footer_contact{
   margin: 0 0 0 15px;
@@ -433,6 +430,7 @@ body{
 .footer_copyright{
   grid-column: 2/3;
   grid-row: 3/4;
+  font-size: 12px;
 }
 .footer_copyright_link{
   display: inline-block;
