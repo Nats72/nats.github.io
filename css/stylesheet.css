@@ -637,6 +637,17 @@ body{
     font-family: '游ゴシック体', yuGothic, sans-serif;
     color: #f3f4f5;
 }
+.footer_contact::before{
+    position: absolute;
+    content: '';
+    width: 50px;
+    height: 50px;
+    background-color: #e4e5f7;
+    opacity: 0.3;
+    border-radius: 50%;
+    transform:translate(-15px,-10px);
+    z-index: 10;
+}
 .footer_copyright{
     grid-column: 2/3;
     grid-row: 3/4;
