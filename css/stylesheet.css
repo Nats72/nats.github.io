@@ -452,10 +452,10 @@ body{
     transform:translate(-20px,-10px);
     z-index: 10;
 }
-.vision_learnmore:hover::before{
+/* .vision_learnmore:hover::before{
     animation: learnmore_effect 0.5s;
-    animation-fill-mode: forwards;    /* アニメーション後に戻らない(100%の位置を維持) */
-}
+    animation-fill-mode: forwards;
+} */
 @keyframes learnmore_effect{
     0%{
         width: 3em;
@@ -566,10 +566,10 @@ body{
     transform:translate(-1em,-0.5em);
     z-index: 10;
 }
-.white_learnmore:hover::before{
+/* .white_learnmore:hover::before{
     animation: learnmore_effect 0.7s;
-    animation-fill-mode: forwards;    /* アニメーション後に戻らない(100%の位置を維持) */
-}
+    animation-fill-mode: forwards;
+} */
 
 .parallax{
     grid-column: 2/-1;
