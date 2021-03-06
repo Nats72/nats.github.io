@@ -81,6 +81,7 @@ body{
     display: grid;
     margin: 0;
     padding-top: 50px;
+    padding-bottom: 16px;
     width: 100%;
     grid-template-columns: 80px repeat(10,1fr) 80px;
     background-color: rgba(255,255,255,0);
@@ -334,7 +335,7 @@ body{
 }
 .down-cursor{
     display: inline-block;
-    width: 16px;
+    width: 8px;
     height: 16px;
     margin: 0;
     text-align: center;
@@ -584,6 +585,7 @@ body{
 }
 .bg-text{
     font-size: 48px;
+    color: #272d3d;
     background-color: rgba(0, 0, 0, 0);
     margin:0 0 0 80px;
     padding: 0;
