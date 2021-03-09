@@ -63,11 +63,12 @@ body{
   grid-auto-flow: row dense;  /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
   grid-template-columns: calc(133/1600 * 100%) calc(246/1600 * 100%) calc(305/1600 * 100%) calc(838/1600 * 100%) calc(75/1600 * 100%);
   grid-template-rows: 600px 136px 240px 150px;
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
   font-size: 16px;
   background-color:midnightblue;
   z-index: 1;
+  overflow: hidden;
 }
 .privacy_text_side{
   grid-column: 1/2;
@@ -128,31 +129,39 @@ body{
   margin-right: 60px;
   z-index: 1;
 }
-
-/* トップ部分にある縦ライン */
-.privacy_center-line {
-  grid-column: 2/4;
+/* 背景の罫線 */
+.v-line-white-1{
+  grid-column: 1/-1;
   grid-row: 1/5;
-  border-left: solid 1px;
-  border-color: rgba(255, 255, 255, 0.12);
+  width: calc(135/1600 * 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
 }
-.privacy_right-line {
-  grid-column: 4/5;
-  grid-row: 3/5;
-  border-left: solid 1px;
-  border-right: solid 1px;
-  border-color: rgba(255, 255, 255, 0.12);
+.v-line-white-2{
+  grid-column: 1/-1;
+  grid-row: 2/5;
+  width: calc(685/1600 * 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+.v-line-white-3{
+  grid-column: 1/-1;
+  grid-row: 2/5;
+  width: calc(1524/1600 * 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 /* MAIN PAGE(背景：白) */
 .container_bottom{
   display: grid;
   grid-auto-flow: row dense;  /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
+  grid-template-columns: calc(372/1600 * 100%) calc(856/1600 * 100%) calc(372/1600 * 100%);
   grid-template-rows: 442px 370px 334px 485px 295px 333px 332px 256px 194px 320px;
-  grid-row-gap: 10px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
   font-size: 16px;
   background-color:white;
   z-index: 1;
+  overflow: hidden;
+  position:relative;
 }
 .privacy_hr {
   border: solid 3px #191970;
@@ -196,103 +205,112 @@ body{
   padding-left: 0px;
 }
 .privacy_overview{
+  grid-column: 1/-1;
   grid-row: 1/2;
   height:442px;
   width:50%;
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   position:relative;
+  margin-left: auto;
+  margin-right: auto;
 }
 .privacy_management{
+  grid-column: 1/-1;
   grid-row: 2/3;
   width:50%;
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
   position:relative;
+  margin-left: auto;
+  margin-right: auto;
 }
 .privacy_purpose{
+  grid-column: 1/-1;
   grid-row: 3/4;
   width:50%;
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
   position:relative;
+  margin-left: auto;
+  margin-right: auto;
 }
 .privacy_forbiddance{
+  grid-column: 1/-1;
   grid-row: 4/5;
   width:50%;
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
   position:relative;
+  margin-left: auto;
+  margin-right: auto;
 }
 .privacy_safety{
+  grid-column: 1/-1;
   grid-row: 5/6;
   width:50%;
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
   position:relative;
+  margin-left: auto;
+  margin-right: auto;
 }
 .privacy_inquiry{
+  grid-column: 1/-1;
   grid-row: 6/7;
   width:50%;
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
   position:relative;
+  margin-left: auto;
+  margin-right: auto;
 }
 .privacy_law{
+  grid-column: 1/-1;
   grid-row: 7/8;
   width:50%;
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
   position:relative;
+  margin-left: auto;
+  margin-right: auto;
 }
 .privacy_contact{
+  grid-column: 1/-1;
   grid-row: 8/9;
   width:50%;
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
   position:relative;
-}
-.privacy_contact_to{
-  grid-row: 9/10;
-  width:50%;
   margin-left: auto;
   margin-right: auto;
+}
+.privacy_contact_to{
+  grid-column: 1/-1;
+  grid-row: 9/10;
+  width:50%;
   display: flex;
   justify-content: center;
   align-items: center;
   position:relative;
   background-color: #f6f6fa;
+  margin-left: auto;
+  margin-right: auto;
 }
 .privacy_text_contact_to{
   font-family: YuGothic;
@@ -304,6 +322,25 @@ body{
   color: #272d3d;
   width:100%;
   margin-left: 50px;
+}
+/* 背景の罫線 */
+.v-line-gray-1{
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  width: calc(135/1600 * 100%);
+  border-right: 1px solid rgba(46, 46, 46, 0.12);
+}
+.v-line-gray-2{
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  width: calc(685/1600 * 100%);
+  border-right: 1px solid rgba(46, 46, 46, 0.12);
+}
+.v-line-gray-3{
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  width: calc(1524/1600 * 100%);
+  border-right: 1px solid rgba(46, 46, 46, 0.12);
 }
 
 /* FOOTER */

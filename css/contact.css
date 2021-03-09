@@ -64,7 +64,7 @@ body {
 /* トップ部分にある縦ライン */
 .container-top .vertical-line {
   border-right: solid 1px;
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.03);
 }
 
 .container-top .center-line {
@@ -161,7 +161,8 @@ body {
   font-weight: 100;
   color: #fff;
   /* color: black; */
-  line-height: 280px; /* グリッドの高さと同じにする */
+  /* グリッドの高さと同じにする */
+  line-height: 280px;
   text-align: left;
   /* overflow: hidden; */
   /* white-space: nowrap; */
@@ -209,8 +210,7 @@ body {
 /* メイン部分にある縦や横ライン */
 .container-main .vertical-line {
   border-right: solid 1px;
-  border-color: #2e2e2e;
-  opacity: 0.12;
+  border-color: rgba(46, 46, 46, 0.03);
 }
 
 .container-main .left-line {
@@ -236,8 +236,7 @@ body {
 
 .horizon-line {
   border-bottom: solid 1px;
-  border-color: #2e2e2e;
-  opacity: 0.12;
+  border-color: rgba(46, 46, 46, 0.03);
 }
 
 .container-main .bottom-line {
@@ -475,12 +474,14 @@ body {
   color: #191970;
 }
 
-.under-bar {
-  display: block;
+.under-line {
+  display: inline-block;
+  /* アンダーバーをいい感じにするための 23px */
+  height: 23px;
   font-family: 'Montserrat';
   font-weight: normal;
-  text-decoration: underline;
-  text-decoration-color: #191970;
+  text-decoration: none;
+  border-bottom: solid 1px #191970;
 }
 
 /* 確認ボタン */

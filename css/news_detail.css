@@ -63,11 +63,12 @@ body{
   grid-auto-flow: row dense;  /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
   grid-template-columns: calc(133/1600 * 100%) calc(246/1600 * 100%) calc(305/1600 * 100%) calc(838/1600 * 100%) calc(75/1600 * 100%);
   grid-template-rows: 736px 164px 146px;
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
   font-size: 16px;
   background-color:midnightblue;
   z-index: 1;
+  overflow: hidden;
 }
 .news_detail_text_side{
   grid-column: 1/2;
@@ -129,21 +130,24 @@ body{
   text-align: right;
   z-index: 1;
 }
-
-/* トップ部分にある縦ライン */
-.news_detail_center-line {
-  grid-column: 2/4;
+/* 背景の罫線 */
+.v-line-white-1{
+  grid-column: 1/-1;
   grid-row: 1/5;
-  border-left: solid 1px;
-  border-color: rgba(255, 255, 255, 0.12);
+  width: calc(135/1600 * 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
 }
-.news_detail_right-line {
-  grid-column: 4/5;
+.v-line-white-2{
+  grid-column: 1/-1;
   grid-row: 2/5;
-  border-left: solid 1px;
-  border-right: solid 1px;
-  border-color: rgba(255, 255, 255, 0.12);
-  z-index: 5;
+  width: calc(685/1600 * 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+.v-line-white-3{
+  grid-column: 1/-1;
+  grid-row: 2/5;
+  width: calc(1524/1600 * 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 /* MAIN PAGE(背景：白) */
@@ -152,11 +156,12 @@ body{
   grid-auto-flow: row dense;  /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
   grid-template-columns: calc(133/1600 * 100%) calc(238/1600 * 100%) calc(855/1600 * 100%) calc(372/1600 * 100%);
   grid-template-rows: 404px 450px 471px 380px 473px 150px 200px 569px 500px 500px;
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
   font-size: 16px;
   background-color:white;
   z-index: 1;
+  overflow: hidden;
 }
 .news_detail_middle_title{
   grid-column: 3/4;
@@ -365,10 +370,29 @@ body{
   -webkit-background-clip: text;
 }
 .news_detail_bottom_img{
-  grid-column: -3/-1;
+  grid-column: 2/-1;
   grid-row: 10/11;
   height: 100%;
   width: 100%;
+}
+/* 背景の罫線 */
+.v-line-gray-1{
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  width: calc(135/1600 * 100%);
+  border-right: 1px solid rgba(46, 46, 46, 0.12);
+}
+.v-line-gray-2{
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  width: calc(685/1600 * 100%);
+  border-right: 1px solid rgba(46, 46, 46, 0.12);
+}
+.v-line-gray-3{
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  width: calc(1524/1600 * 100%);
+  border-right: 1px solid rgba(46, 46, 46, 0.12);
 }
 
 /* FOOTER */
