@@ -28,10 +28,8 @@ body{
 .container_top_vision{
     display: grid;
     grid-auto-flow: row dense;  /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
-    grid-template-columns: repeat(12,1fr);
+    grid-template-columns: calc(100/1600 * 100%) calc(115/1600 * 100%) calc(570/1600 * 100%) calc(50/1600 * 100%) calc(570/1600 * 100%) calc(195/1600 * 100%);
     grid-template-rows: 260px 340px 130px 260px 90px 80px 510px;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
     font-size: 16px;
     background-color:midnightblue;
     z-index: 1;
@@ -87,7 +85,7 @@ body{
     color: #f3f4f5;
 }
 .main_title1{
-    grid-column: 2/-1;
+    grid-column: 3/-1;
     grid-row: 2/3;
     width: 1144px;
     height: 276px;
@@ -102,7 +100,7 @@ body{
     color: #ffffff;
 }
 .main_title2{
-    grid-column: 2/-1;
+    grid-column: 3/-1;
     grid-row: 3/4;
     width: 694px;
     height: 252px;
@@ -159,7 +157,7 @@ body{
 }
 
 .main_catchcopy{
-    grid-column: 2/-1;
+    grid-column: 3/4;
     grid-row: 5/6;
     width: 600px;
     height: 29px;
@@ -175,7 +173,7 @@ body{
     color: #ffffff;
 }
 .main_text1{
-    grid-column: 2/6;
+    grid-column: 3/4;
     grid-row: 6/7;
     margin: 0px;
     width: 567px;
@@ -191,7 +189,7 @@ body{
     color: #ffffff;
 }
 .main_text2{
-    grid-column: 7/-1;
+    grid-column: 5/6;
     grid-row: 7/8;
     width: 568px;
     height: 230px;
@@ -213,10 +211,8 @@ body{
 .container_middle_vision{
     display: grid;
     grid-auto-flow: row dense;  /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
-    grid-template-columns: repeat(12,1fr);
-    grid-template-rows: 300px 145px 685px 385px;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+    grid-template-columns: calc(100/1600 * 100%) calc(115/1600 * 100%) calc(570/1600 * 100%) calc(215/1600 * 100%) calc(600/1600 * 100%);
+    grid-template-rows: 300px 145px 685px 335px;
     font-size: 16px;
     background-color:white;
     z-index: 1;
@@ -235,13 +231,13 @@ body{
     color: #191970
 }
 .middle_img_top{
-    grid-column: -2/-1;
+    grid-column: 5/6;
     grid-row: 1/2;
     margin-top: -130px;
     z-index: 3;
 }
 .middle_catchcopy{
-    grid-column: 3/7;
+    grid-column: 3/4;
     grid-row: 2/3;
     width: 600px;
     height: 90px;
@@ -285,7 +281,7 @@ body{
     display:inline-block;
 }
 .middle_text{
-    grid-column: 3/7;
+    grid-column: 3/4;
     grid-row: 3/4;
     width: 566px;
     height: 625px;
@@ -307,20 +303,20 @@ body{
     margin:0px 0px 0px 0px;
 }
 .middle_text_name{
+    grid-column: 3/4;
     grid-row: 4/5;
-    grid-column: 6/10;
     font-family: YuGothic;
     font-size: 18px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
 }
 .ceo{
     width: 90px;
     height: 20px;
-    margin: 20px 30px 0px 105px;
+    margin: 20px 30px 0px 0px;
     color: rgba(156, 156, 168, 0.5);
 }
 .ceo_name{
@@ -334,10 +330,8 @@ body{
 .container_bottom_vision{
     display: grid;
     grid-auto-flow: row dense;  /* gridで並べる方向を横方向にする(標準) denseをつけると隙間があれば埋める設定 */
-    grid-template-columns: 133px 85px 15px 285px 34px 130px 43px 585px 290px;
-    grid-template-rows:575px 500px;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+    grid-template-columns: calc(135/1600 * 100%) calc(85/1600 * 100%) calc(15/1600 * 100%) calc(1035/1600 * 100%) calc(330/1600 * 100%);
+    grid-template-rows: 160px 65px 60px 130px 500px;
     font-size: 16px;
   }
 
@@ -345,9 +339,11 @@ body{
 .vision_bottom_text_service{
     display: inline-block; 
     grid-column: 3/5;
-    grid-row: 1/2;
-    margin-top: 320px;
+    grid-row: 2/4;
+    width: 260px;
+    margin-top: 0px;
     margin-left: 0px;
+    margin-right: 34px;
     padding: 0;
     font-family: Montserrat;
     font-size: 60px;
@@ -362,10 +358,10 @@ body{
   }
   .vision_bottom_text_service_jp{
     display: inline-block;
-    grid-column: 5/8;
-    grid-row: 1/2;
-    margin-top: 320px;
-    margin-left: 0px;
+    grid-column: 3/5;
+    grid-row: 2/3;
+    margin-top: 0px;
+    margin-left: 294px;
     padding: 0;
     font-family: YuGothic;
     font-size: 22px;
@@ -380,8 +376,7 @@ body{
   }
   .vision_learnmore{
     grid-column: 4/5;
-    grid-row: 1/2;
-    margin-top: 445px;
+    grid-row: 4/5;
     margin-left: 0px;
     padding: 0;
     font-family: Montserrat;
@@ -398,24 +393,22 @@ body{
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
   
   .vision_next{
-    grid-column: 9/-1;
-    grid-row: 1/2;
+    grid-column: 5/-1;
+    grid-row: 3/5;
     width: 270px;
     height: 120px;
-    margin-top: 380px;
-    margin-left:-80px;
     padding: 0;
     font-family: Montserrat;
     font-size: 116px;
     font-weight: 400;
     text-align: left;
-    background-image: url("../images/A_PC/02_VISION/1x/b-vision_next_image.jpg");
+    background-image: url("../images/A_PC/02_VISION/2x/b-vision_next_image@2x.jpg");
     -webkit-background-clip: text;
     color: transparent;
   }
 .vision_bottom_img_background{
     grid-column: 2/-1;
-    grid-row: -2/-1;
+    grid-row: 5/-1;
     width: 1467px;
     height: 500px;
     background-color: #191970;
@@ -424,10 +417,96 @@ body{
 }
 .vision_bottom_img{
     grid-column: 2/-1;
-    grid-row: -2/-1;
+    grid-row: 5/-1;
     width: 1467px;
     height: 500px;
     background-color: #191970;
     z-index: 2;
   }
-  
+
+/* FOOTER */
+.footer{
+    display: grid;
+    grid-template-columns: calc(135/1600 * 100%) calc(635/1600 * 100%) calc(470/1600 * 100%) calc(360/1600 * 100%);
+    grid-template-rows: 290px 490px 120px;
+    background-color: #26263b;
+  }
+  .footer p{
+    color: #ffffff;
+  }
+  .footer_company{
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  .footer_logo_img{
+    display: inline;
+    width: 90px;
+    vertical-align: middle;
+  }
+  .footer_company_name{
+    display: inline;
+    font-family: Montserrat;
+    margin-left: 25px;
+    font-size: 16px;
+    line-height: 3.75;
+    vertical-align: middle;
+  }
+  .footer_postcode{
+    margin: 60px 0 0 0;
+    font-family: Kozuka Gothic Pr6N R;
+    font-size: 14px;
+    line-height: 1.71;
+  }
+  .footer_address{
+    margin: 0 0 50px 0;
+    font-family: Kozuka Gothic Pr6N R;
+    font-size: 14px;
+    line-height: 1.71;
+    font-family: '游ゴシック体', yuGothic, sans-serif;
+  }
+  .footer_contact{
+    margin: 0 0 0 15px;
+    font-family: '游ゴシック体', yuGothic, sans-serif;
+    color: #f3f4f5;
+  }
+  .footer_copyright{
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
+  .footer_copyright_link{
+    display: inline-block;
+    margin-left: 39px;
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 0.5;
+  }
+  .footer_copyright_sentence{
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 0.5;
+  }
+  .footer_sitemap{
+    grid-column: 3/4;
+    grid-row: 2/3;
+    text-align: left;
+  }
+  .footer_sitemap table{
+    width:100%;
+  }
+  .footer_sitemap tr{
+    height:62px;
+  }
+  .footer_sitemap th{
+    border: 0px none;
+    width:40%;
+  }
+  .footer_sitemap_link_th{
+    color: #ffffff;
+  }
+  .footer_sitemap td{
+    border: 0px none;
+    width:60%;
+  }
+  .footer_sitemap_link_td{
+    opacity: 0.5;
+    color: rgba(255, 255, 255, 0.5);
+  }

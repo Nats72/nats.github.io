@@ -24,6 +24,8 @@
 .img-bg-03 {
     background-image: url('../images/A_PC/01_TOP/2x/b-top_service_image_01@2x.jpg');
 }
-.img-bg-04 {
-    background-image: url('../images/A_PC/01_TOP/2x/b-top_service_image_01@2x.jpg');
+
+/* 白抜き画像 */
+.see-through-01{
+    background-image: url('../images/A_PC/01_TOP/2x/b-top_service_bg_01.svg');
 }

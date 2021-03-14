@@ -74,10 +74,10 @@
     </div>
     <div class="vision_background">
       <ul>
-        <li>Company Vision</li>
+        <li>Company Vision </li>
       </ul>
       <ul>
-        <li>Company Vision</li>
+        <li>Company Vision </li>
       </ul>
     </div>
   </div>
@@ -133,32 +133,24 @@
     <div class="parallax">
       <div class="parallax-bg img-bg-01">
         <div class="bg-content">
-          <div class="bg-title">
+          <div class="bg-title see-through-01">
             <h1 class="bg-text">INTERNATIONAL<br>SUPPORT PROJECT</h1>
             <a class="white_learnmore project_learnmore" href="#">Learn more +</a>
           </div>
         </div>
       </div>
-      <div class="parallax-bg img-bg-01">
+      <div class="parallax-bg img-bg-02">
         <div class="bg-content">
-          <div class="bg-title">
-            <h1 class="bg-text">INTERNATIONAL<br>SUPPORT PROJECT</h1>
+          <div class="bg-title see-through-02">
+            <h1 class="bg-text">COMMUNICATION BUSINESS</h1>
             <a class="white_learnmore project_learnmore" href="#">Learn more +</a>
           </div>
         </div>
       </div>
-      <div class="parallax-bg img-bg-01">
+      <div class="parallax-bg img-bg-03">
         <div class="bg-content">
-          <div class="bg-title">
-            <h1 class="bg-text">INTERNATIONAL<br>SUPPORT PROJECT</h1>
-            <a class="white_learnmore project_learnmore" href="#">Learn more +</a>
-          </div>
-        </div>
-      </div>
-      <div class="parallax-bg img-bg-01">
-        <div class="bg-content">
-          <div class="bg-title">
-            <h1 class="bg-text">INTERNATIONAL<br>SUPPORT PROJECT</h1>
+          <div class="bg-title see-through-03">
+            <h1 class="bg-text">EVENT BUSINESS</h1>
             <a class="white_learnmore project_learnmore" href="#">Learn more +</a>
           </div>
         </div>
@@ -170,7 +162,7 @@
     <div class="footer_company">
       <img class="footer_logo_img" src="images/C_logo/SVG/c-head logo.svg" alt="logo">
       <p class="footer_company_name">SECOND Company Limited.</p>
-      <p class="footer_postcode">446-0002</p>
+      <p class="footer_postcode">〒446-0002</p>
       <p class="footer_address">名古屋市中区丸の内2-14-4エグゼ丸の内2F202</p>
       <a class="footer_contact" href="contact.html">会社や採用に関するお問い合わせはこちらから +</a>
     </div>
@@ -332,11 +324,12 @@
     let count_total = document.getElementById('page-count-total');
     let main_link = document.getElementById('main-link');
     let main_img = document.getElementById('main-img');
+    let bg_img = document.getElementsByClassName('background_img')[0];
     let slide_menu = [
-      {"category":"Vision","imgPath":"images/A_PC/01_TOP/2x/b-kv_image@2x.jpg"},
-      {"category":"Service","imgPath":"images/A_PC/01_TOP/2x/b-kv_image@2x.jpg"},
-      {"category":"Company","imgPath":"images/A_PC/01_TOP/2x/b-kv_image@2x.jpg"},
-      {"category":"Event","imgPath":"images/A_PC/01_TOP/2x/b-kv_image@2x.jpg"},
+      {"category":"Vision","imgPath":"images/A_PC/01_TOP/2x/b-kv_image_vision@2x.jpg","bgImgPath":"images/A_PC/01_TOP/2x/b-kv_image_vision_bg@2x.jpg"},
+      {"category":"Service","imgPath":"images/A_PC/01_TOP/2x/b-kv_image_service@2x.jpg","bgImgPath":"images/A_PC/01_TOP/2x/b-kv_image_service_bg@2x.jpg"},
+      {"category":"Company","imgPath":"images/A_PC/01_TOP/2x/b-kv_image_company@2x.jpg","bgImgPath":"images/A_PC/01_TOP/2x/b-kv_image_company_bg@2x.jpg"},
+      {"category":"News","imgPath":"images/A_PC/01_TOP/2x/b-kv_image_news@2x.jpg","bgImgPath":"images/A_PC/01_TOP/2x/b-kv_image_news_bg@2x.jpg"},
     ]
 
     let page = 1;
@@ -355,6 +348,7 @@
       document.getElementById('page-progress-wide').value = 0;
       document.getElementById('page-category').textContent = slide_menu[page-1].category;
       main_img.src = slide_menu[page-1].imgPath;
+      bg_img.src = slide_menu[page-1].bgImgPath;
       count.textContent = page;
     });
     //NEXT押下時の動作
@@ -368,6 +362,7 @@
       document.getElementById('page-progress-wide').value = 0;
       document.getElementById('page-category').textContent = slide_menu[page-1].category;
       main_img.src = slide_menu[page-1].imgPath;
+      bg_img.src = slide_menu[page-1].bgImgPath;
       count.textContent = page;
     });
     
@@ -388,6 +383,7 @@
           page = page+1;
         }
         main_img.src = slide_menu[page-1].imgPath;
+        bg_img.src = slide_menu[page-1].bgImgPath;
         count.textContent = page;
         setTimeout(prog, 10);  //10msごとに0.1%あがる
       }

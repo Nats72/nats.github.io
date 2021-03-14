@@ -171,7 +171,7 @@ body{
   border: none;
   position: absolute;
   bottom: 0;
-  margin-right: 760px;
+  left:0;
  }
  .privacy_text{
   font-family: YuGothic;
